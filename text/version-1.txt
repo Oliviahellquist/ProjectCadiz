@@ -1,0 +1,9 @@
+Ladda ner databasen och strukturera upp med mappar, bilder och filer.
+
+Börja med att strukturera huvudsidan i html.
+
+Formatera koden: 
+Vi vill använda samma struktur i javascript och html med funktionsnamn, iden och klasser.
+Inga mellanslag och storbokstav vid nytt ord. Endast engelska vid namn, iden, klasser och commits.   
+
+
