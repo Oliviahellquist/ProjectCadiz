@@ -6,4 +6,4 @@ Formatera koden:
 Vi vill använda samma struktur i javascript och html med funktionsnamn, iden och klasser.
 Inga mellanslag och storbokstav vid nytt ord. Endast engelska vid namn, iden, klasser och commits.   
 
-
+Lorem ipsum
