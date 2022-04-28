@@ -1,1 +1,11 @@
-responsiv
+Version 3:
+Färdigställa hela hemsidan, se till att den är lättnavigerad och att alla funktioner fungerar som de ska. Se till att någon utomstående testar hemsidan och hittar eventuella fel eller störningar.
+Se till att få hjälp med eventuella problem innan inlämningsdatum.
+
+Issues: 
+
+Responsivitet startsida
+Responsivitet länder
+Responsivitet utbildningar + visa mer 
+Alla Hyperlinks funkar mellan sidorna
+Css/design Förbättringar
