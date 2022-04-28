@@ -2,8 +2,48 @@ Ladda ner databasen och strukturera upp med mappar, bilder och filer.
 
 Börja med att strukturera huvudsidan i html.
 
-Formatera koden: 
+Val av färger, fonter och storlekar i css (grafisk profil). 
+
+Custom properties (CSS variabler) 
+:root {
+    —colorRed: ;
+    —colorWhite: ;
+    —colorBlue: skyblue; exempel 
+    —colorDarkblue: ;
+    —titleFont: futura-pt-bold, sans-serif; exempel 
+    —mainFont: 'Libre Baskerville', serif; exempel 
+    —titleSize: ;
+    —texSize: ;
+}
+
+(font-family: var(--mainFont);)
+
+
+Bygga menyn och "grunden" själva skelettet till startsidan.  
+
+Hur vi vill formatera koden: 
 Vi vill använda samma struktur i javascript och html med funktionsnamn, iden och klasser.
 Inga mellanslag och storbokstav vid nytt ord. Endast engelska vid namn, iden, klasser och commits.   
 
-Lorem ipsum
+Issues: 
+Custom properties
+home.html bygga skelettet till startsidan
+home.css jobba med home.html 
+countries.html bygga skelettet till länder 
+countries.css jobba med countries.html 
+Grid av alla länder med en bakgrundsbild av landet 
+country.html bygga skelettet till länder 
+country.css jobba med country.html 
+“betygboxarna” med soldagar, maten, uteliv och boende 
+Kommentarsrutan om länderna 
+programs.html bygga skelettet till utbildningar  
+programs.css jobba med programs.html  
+Bygga filtreringsrutan 
+Listan för utbildningarna
+“visa mer” om utbildningarna
+Bygga menyn 
+Burgare menyn till ett kryss (transition)
+Rutan med year, succes rate och entery grade
+
+
+

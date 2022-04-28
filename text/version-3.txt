@@ -1,1 +1,14 @@
-responsiv
+Färdigställa hela hemsidan, se till att den är lättnavigerad och att alla 
+funktioner fungerar som de ska. 
+
+Se till att någon utomstående testar hemsidan och hittar eventuella fel 
+eller störningar. 
+
+Se till att få hjälp med eventuella problem innan inlämningsdatum. 
+
+Issues: 
+1. Responsivitet om det behövs
+2. Annat fix
+3. Sökfält om vi hinner och klarar av
+4. Färdigställa allt
+5. Kontrollera att allt 

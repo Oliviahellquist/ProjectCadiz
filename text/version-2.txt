@@ -1,1 +1,30 @@
-Innehåll, grafik 
+Påbörja allt innehåll. Börja med det mest omfattande. Filtreringsfunktion,
+Läs mer, random kommentarer osv.. 
+
+Se till att gå på alla open labs för att få tillgång till så mycket hjälp 
+som vi behöver. 
+
+Se till att en eller flera testperson kontrollerar hemsidan och hittar 
+eventuella fel eller brister i ett "tidigt skede"
+
+
+Issues: 
+Infotext om landet till varje land 
+Filtrera länder
+Filtrera ämne
+Filtrera nivå
+Rensa filtrering 
+Ny kommentar om programmet random 
+Visa mer om programmet 
+Visa mindre
+Rutan med kommentar från tidigare student 
+Läs mer om program
+Funktion för medelbetyget på uteliv, mat och boende
+Funktion för antalet soldagar
+ Programmen ska listas från A-Ö med titel, stad, land och nivå.
+Medelbetyg för lärare och medelbetyg för kurser
+Ny random kommentar till länder 
+Ny random kommentar om programmet 
+Listan på program ska innehålla  titel, stad, land och nivå.
+Statistics funktion (rutan med year, succes rate och entery grade)
+info-delen i “läs mer” om programmet  med Nivå, språk, utbytesstudenter, visum och lokala studenter
