@@ -9,7 +9,7 @@ body{
 }
 
 #header :last-child{
-    background-image: url("Icons /StudyAbroad.png");
+    background-image: url("Icons/StudyAbroad.png");
     background-size: cover;
     margin-bottom: 30px;
     margin-left: 30px;
