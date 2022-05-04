@@ -1,5 +1,5 @@
 body{
-    background-color: azure;
+    background-color: var(--backgroundColor);
     height: 100vh;
 }
 
@@ -11,9 +11,9 @@ body{
 
 #header :last-child{
     background-image: url("Icons/StudyAbroad.png");
-    background-size: cover;
-    margin-bottom: 30px;
-    margin-left: 30px;
+    background-repeat: no-repeat;
+    background-size: 150px;
+    background-position: right;
 }
 
 
@@ -42,8 +42,6 @@ h1{
 }
 
 #article{
-   
-
     display: flex;
     justify-content: center;
     align-items: center;
