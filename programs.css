@@ -108,3 +108,42 @@ h1{
   padding-top: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+#UtbBoxContainer {
+  float: right;
+  border: solid black 1px;
+  margin-right: 50px;
+  width: 800px;
+  height: 100vh;
+  margin-left:  30px;
+  margin-top: 30px;
+  
+  
+}
+
+.UtbBox {
+  background-color: #C4C4C4;
+  border: solid black 1px;
+
+}
+
+.UtbBox>h1 {
+  color: black;
+  margin: 25px 0px 5px 25px;
+
+}
+
+.UtbBox>h2 {
+  color: black;
+  margin: 5px 0px 5px 25px;
+}
+
+.UtbBox>p {
+  color: black;
+  margin: 5px 0px 25px 25px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
+}
