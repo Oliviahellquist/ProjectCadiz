@@ -5,8 +5,7 @@ body{
 #redStripe{
   width: 100vw;
   height: 100px;
-  background-color: var( --colorRed);
-
+  background-color: var(--colorRed);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +25,6 @@ body{
   background-position: right;
 }
 
-
 #header :first-child{
   justify-content: left;
 }
@@ -41,7 +39,6 @@ h1{
   margin: 0px;
   color: var(--textcColor);
 }
-
 
 .container {
   overflow: hidden;
@@ -65,9 +62,15 @@ h1{
 .btnClear {
   text-align: right;
   font-size: 25px;
-  color: #E2736B;
+  color: var(--colorRed);
   border: none;
   background-color: #DEDEDE;
+}
+
+
+
+.btnClear:hover{
+    cursor: pointer;
 }
 
 
@@ -82,13 +85,13 @@ h1{
 }
   
 .btn:hover {
-  background-color:#E2736B;
+  background-color:var(--colorRed);
 }
 
 #filterContainer{
-  border: 6px #E2736B solid;
+  border: 6px var(--colorRed) solid;
   width: 300px;
-  height: auto;
+  height: 100%;
   margin-top: 30px;
   margin-left: 30px;
   background-color: #DEDEDE;
@@ -105,6 +108,7 @@ h1{
   padding-top: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
 
 .navbar{
   display: grid;
@@ -124,5 +128,57 @@ h1{
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+#UtbBoxContainer {
+  float: right;
+  margin-right: 50px;
+  width: 800px;
+  height: 100%;
+  margin-left:  30px;
+  margin-top: 30px;
+}
+
+.UtbBox {
+  background-color: #C4C4C4;
+  margin-bottom: 10px;
+  padding: 10px;
+
+  
+}
+
+.UtbBox>h1 {
+  color: black;
+  margin: 25px 0px 5px 25px;
+}
+
+.UtbBox>h2 {
+  color: black;
+  margin: 5px 0px 5px 25px;
+  font-family: var(--mainFont);
+  text-decoration: underline;
+}
+
+.UtbBox>p {
+  color: black;
+  margin: 5px 0px 25px 25px;
+  font-family: var(--titleFont);
+  
+}
+
+.showMoreBtn {
+  float: right;
+  margin-right: 25px;
+  border: none;
+  padding: 12px 30px;
+  background-color: var(--colorRed);
+  cursor: pointer;
+  font-size: 16px;
+}
+
+main {
+  display: flex;
+  flex-direction: row;
 }
 
