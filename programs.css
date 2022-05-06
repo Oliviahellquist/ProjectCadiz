@@ -15,9 +15,10 @@ body{
   height: 80px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
+  
 }
 
-#header :last-child{
+.top1{
   background-image: url("Icons/StudyAbroad.png");
   background-repeat: no-repeat;
   background-size: 150px;
@@ -66,9 +67,12 @@ h1{
   background-color: #DEDEDE;
 }
 
+
+
 .btnClear:hover{
     cursor: pointer;
 }
+
 
 .btn {
   border: none;
@@ -104,6 +108,28 @@ h1{
   padding-top: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
+
+
+.navbar{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#picture{
+  background-image: url(Icons/StudyAbroad.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position-X: right;
+
+  margin-top: 20px; 
+}
+
+#title{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 #UtbBoxContainer {
   float: right;
@@ -155,3 +181,4 @@ main {
   display: flex;
   flex-direction: row;
 }
+
