@@ -1,5 +1,6 @@
 body{
     background-color: var(--backgroundColor);
+    height: 100vh;
 }
 
 #header{
@@ -30,63 +31,38 @@ h1{
     margin: 0px;
 }
 
-#grid{
-    margin-top: 40px;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-    
-    height: 900px;
-    gap: 20px;
-    margin-right: 100px;
-    margin-left: 100px;
-}
+#article > div{
+    height: 100vh;
+    width: 70vw;
+    background-color: rgb(255, 255, 255);
 
-.blueBox{
-    height: 200px;
-    width: 280px;
-    background-color: var(--colorBlue);
-}
-
-#grid :nth-child(2){
-    background-image: url("Images/australia_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(3){
-    background-image: url("Images/chile_normal_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(4){
-    background-image: url("Images/france_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(5){
-    background-image: url("Images/mexico city_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(6){
-    background-image: url("Images/spain_big_3.jpg");
-    background-size: cover;
-}
-#grid :nth-child(7){
-    background-image: url("Images/sweden_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(8){
-    background-image: url("Images/united kingdom_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(9){
-    background-image: url("Images/usa_big_1.jpg");
-    background-size: cover;
-}
-
-.land{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("Images/argentina_big_1.jpg");
-    background-size: cover;
 }
 
+#article{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.navbar{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+#picture{
+    background-image: url(Icons/StudyAbroad.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-X: right;
+
+    margin-top: 20px; 
+}
+
+#title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
