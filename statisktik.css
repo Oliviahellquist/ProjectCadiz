@@ -1,0 +1,116 @@
+body {
+    height: 100vh; 
+    background-color: brown;
+    margin: 0%;
+    display: flex;
+    float: right;
+    
+}
+
+.wrapper {
+    margin-top: 100px;
+    margin-right:100px;
+    width: 1000px;
+    height: 660px;
+    background-color: #C4C4C4;
+}
+
+.specifikationer {
+    margin-left: 36px ;
+    background-color: aqua;
+}
+
+.first{
+    padding: 15px 0px 0px 0px;
+    margin: 0;
+    font-size: 40px;
+}
+.second {
+    padding-top: 5px;
+    margin: 0;
+    text-decoration: underline;
+    font-size: 33px;
+}
+.third {
+    margin: 2px 0px 5px 0px;
+    font-size: 33px;
+}
+.container {
+    background-color: yellow;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+#box-1 {
+    background-color: #C4C4C4;
+    margin-top: 58px;
+    width: 180px;
+}
+
+#box-1 div {
+    background-color: grey;
+    height: 40px;
+}
+#box-1 div p {
+    padding-left: 15px;
+    padding-top: 12px;
+}
+
+#box-2 {
+    margin-top: 58px;
+    background-color: green;
+    height: 300px;
+    width: 300px;
+    
+}
+
+#box-3 {
+    margin-top: 58px;
+    background-color: blue;
+    height: 300px;
+    width: 300px;
+}
+
+.rubrik {
+    margin: 0;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rows-3 {
+    display: flex;
+    
+    text-decoration: underline;
+}
+
+.rows-3 p {
+    margin:0;
+}
+
+.rows-3 div {
+   width: 100px;
+   text-align: center;
+}
+
+.rows-3 div div {
+    width: 100px;
+}
+.rows-3 div div div {
+    width: 100px;
+}
+
+
+.siffror {
+    display: grid;
+    grid-template-columns: 3;
+    grid-template-rows: 5;
+    height: 212px;
+}
+
+.siffror div {
+    background-color: white;
+    width: 100px;
+}
