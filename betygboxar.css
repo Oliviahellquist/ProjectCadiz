@@ -1,0 +1,12 @@
+body > div{
+    display: flex;
+    height: 60px;
+    gap: 5px;
+}
+
+div > div{
+    width: 100px;
+    border: black solid 0.5px;
+    font-family: var( --mainFont);
+    text-align: center;
+}
