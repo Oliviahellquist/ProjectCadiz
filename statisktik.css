@@ -1,6 +1,5 @@
 body {
     height: 100vh; 
-    background-color: brown;
     margin: 0%;
     display: flex;
     float: right;
@@ -17,7 +16,7 @@ body {
 
 .specifikationer {
     margin-left: 36px ;
-    background-color: aqua;
+    font-family: var(--titleFont);
 }
 
 .first{
@@ -36,7 +35,7 @@ body {
     font-size: 33px;
 }
 .container {
-    background-color: yellow;
+    
     height: 450px;
     display: flex;
     flex-direction: row;
@@ -44,33 +43,33 @@ body {
 }
 #box-1 {
     background-color: #C4C4C4;
-    margin-top: 58px;
+    margin-top: 41.5px;
     width: 180px;
+    font-family: var(--titleFont);
 }
 
 #box-1 div {
-    background-color: grey;
-    height: 40px;
+    background-color: #DCDCDC;
+    height: 47px;
 }
 #box-1 div p {
     padding-left: 15px;
-    padding-top: 12px;
+    padding-top: 15px;
+    
 }
 
 #box-2 {
     margin-top: 58px;
-    background-color: green;
-    height: 300px;
-    width: 300px;
-    
+    background-color: white;
+    height: 312px;
+    width: 312px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--titleFont);
 }
 
-#box-3 {
-    margin-top: 58px;
-    background-color: blue;
-    height: 300px;
-    width: 300px;
-}
 
 .rubrik {
     margin: 0;
@@ -78,12 +77,15 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0.7; 
 }
 
 .rows-3 {
     display: flex;
-    
+    font-weight: 600;
     text-decoration: underline;
+    font-size: 15px;
+    opacity: 0.7;
 }
 
 .rows-3 p {
@@ -91,26 +93,152 @@ body {
 }
 
 .rows-3 div {
-   width: 100px;
-   text-align: center;
-}
-
-.rows-3 div div {
     width: 100px;
+    text-align: center;
+    
 }
-.rows-3 div div div {
-    width: 100px;
-}
-
-
 .siffror {
-    display: grid;
-    grid-template-columns: 3;
-    grid-template-rows: 5;
+    display: flex;
+    margin-top: 3px;
     height: 212px;
 }
 
-.siffror div {
-    background-color: white;
+.column-1{
     width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-right: 2px;
+}
+
+.column-2 {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.column-3 {
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-left: 2px;
+}
+
+.rad-1{
+    height: 42.4px;
+    background-color: #DCDCDC;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+    
+}
+.rad-2 {
+    height: 42.4px;
+    background-color: #DCDCDC;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+.rad-3 {
+    height: 42.4px;
+    background-color: #DCDCDC;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+.rad-4{ 
+    height: 42.4px;
+    background-color: #DCDCDC;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2px;
+}
+.rad-5 {
+    height: 42.4px;
+    background-color: #DCDCDC;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+#box-3 {
+    margin-top: 58px;
+    background-color: white;
+    height: 312px;
+    width: 312px;
+    
+}
+.text-1 {
+    background-color: #E2736B;
+    height: 95px;
+    font-family: var(--titleFont);
+    font-size: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.text-1 h1 {
+    margin: 0;
+    color: #FFFFFF;
+}
+
+.urberg {
+    font-family: var(--titleFont);
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.urberg p {
+    margin: 0;
+}
+
+.GustavKommentar {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    
+}
+.GustavKommentar p {
+    color: #E2736B;
+    margin: 0;
+    font-weight:bolder;
+    font-size: 15px;
+    text-align: center;
+    
+}
+.nästa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: underline;
+}
+.showMoreBtn { 
+    float: right; 
+    margin-right: 25px; 
+    border: none;
+    padding: 12px 30px; 
+    background-color: var(--colorRed); 
+    cursor: pointer; 
+    font-size: 16px; 
 }
