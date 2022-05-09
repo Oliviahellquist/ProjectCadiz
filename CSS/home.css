@@ -4,7 +4,7 @@
 }
 
 body{
-    background-image: url(Icons/new_york_city_night_evening.jpg);
+    background-image: url(../Icons/new_york_city_night_evening.jpg);
     font-family: 'Koulen', cursive;
 }
 
@@ -79,7 +79,7 @@ h3{
 }
 
 .picture{
-    background-image: url(Icons/Flyg.png);
+    background-image: url(../Icons/Flyg.png);
     background-repeat: no-repeat;
     background-size: contain;
     background-position-x: center;
