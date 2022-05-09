@@ -116,7 +116,7 @@ h1{
 }
 
 #picture{
-  background-image: url(Icons/StudyAbroad.png);
+  background-image: url(../Icons/StudyAbroad.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position-X: right;

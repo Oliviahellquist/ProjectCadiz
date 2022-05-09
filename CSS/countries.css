@@ -9,7 +9,7 @@ body{
 }
 
 #header :last-child{
-    background-image: url("Icons/StudyAbroad.png");
+    background-image: url(../Icons/StudyAbroad.png);
     background-repeat: no-repeat;
     background-size: 150px;
     background-position: right;
@@ -49,35 +49,35 @@ h1{
 }
 
 #grid :nth-child(2){
-    background-image: url("Images/australia_big_1.jpg");
+    background-image: url("../Images/australia_big_1.jpg");
     background-size: cover;
 }
 #grid :nth-child(3){
-    background-image: url("Images/chile_normal_1.jpg");
+    background-image: url("../Images/chile_normal_1.jpg");
     background-size: cover;
 }
 #grid :nth-child(4){
-    background-image: url("Images/france_big_1.jpg");
+    background-image: url("../Images/france_big_1.jpg");
     background-size: cover;
 }
 #grid :nth-child(5){
-    background-image: url("Images/mexico city_big_1.jpg");
+    background-image: url("../Images/mexico city_big_1.jpg");
     background-size: cover;
 }
 #grid :nth-child(6){
-    background-image: url("Images/spain_big_3.jpg");
+    background-image: url("../Images/spain_big_3.jpg");
     background-size: cover;
 }
 #grid :nth-child(7){
-    background-image: url("Images/sweden_big_1.jpg");
+    background-image: url("../Images/sweden_big_1.jpg");
     background-size: cover;
 }
 #grid :nth-child(8){
-    background-image: url("Images/united kingdom_big_1.jpg");
+    background-image: url("../Images/united kingdom_big_1.jpg");
     background-size: cover;
 }
 #grid :nth-child(9){
-    background-image: url("Images/usa_big_1.jpg");
+    background-image: url("../Images/usa_big_1.jpg");
     background-size: cover;
 }
 
@@ -85,7 +85,7 @@ h1{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("Images/argentina_big_1.jpg");
+    background-image: url("../Images/argentina_big_1.jpg");
     background-size: cover;
 }
 
@@ -95,7 +95,7 @@ h1{
 }
 
 #picture{
-    background-image: url(Icons/StudyAbroad.png);
+    background-image: url(../Icons/StudyAbroad.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position-X: right;
