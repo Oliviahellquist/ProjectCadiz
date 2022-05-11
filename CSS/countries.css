@@ -43,9 +43,22 @@ h1{
 }
 
 .blueBox{
-    height: 200px;
+    font-family: var(--titleFont);
+    color: white;
+    font-size: 26px;
+    font-weight: bold;
+    text-align: center;
+    height: 240px;
     width: 280px;
     background-color: var(--colorBlue);
+    
+}
+
+p{
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight:lighter;
+    font-family: var(--mainFont);
 }
 
 #grid :nth-child(2){
