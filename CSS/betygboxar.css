@@ -14,37 +14,27 @@
     font-size: 10px;
 }
 
-#commentProgram{
+
+#commentAboutCity{
     margin-top: 10px;
     width: 300px;
-    height: 200px;
+    height: 150px;
     border: black solid 0.5px;  
     font-size: 10px;
     
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+    
     text-align: center;
 }
 
-#newCommentProgram{
-    text-decoration: underline;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    margin-bottom: 10px;
-}
 
-
-#commentCity{
+#name{
     margin-top: 10px;
-    width: 300px;
-    height: 200px;
-    border: black solid 0.5px;  
-    font-size: 10px;
-    display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
-    text-align: center;
+    display: flex;
+    flex-direction: column;
 }
+
+
 
 .commentStudent{
     display: flex;
@@ -56,10 +46,11 @@
     font-size: 12px;
 }
 
-#newCommentCity{
+#newComment{
     text-decoration: underline;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    margin-bottom: 10px;
+   
+   
 }
