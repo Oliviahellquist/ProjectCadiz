@@ -15,6 +15,7 @@ function countryName(){
     for (let i = 0; i < countries.length; i++) {
         let name = countries[i].name;
         let text = countries[i].text;
+        
         let div = document.createElement("div");
         div.classList.add("land");
         div.innerHTML = `
