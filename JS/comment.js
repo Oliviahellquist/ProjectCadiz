@@ -32,6 +32,8 @@ function cityComment(){
         document.getElementById("newComment").addEventListener("click", cityComment);
 }
 
+cityComment();
+
 
 
 function randomCommentCity(comments){
@@ -79,6 +81,7 @@ function programComment(){
         document.getElementById("newComment1").addEventListener("click", programComment);
 }
 
+getAllCommentsProgramme();
 
 function randomCommentProgramme(comments){
     let nr = Math.floor(Math.random() * comments.length) + 1;
