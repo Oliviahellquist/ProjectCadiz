@@ -14,17 +14,9 @@
     font-size: 10px;
 }
 
-
-#commentAboutCity{
-    margin-top: 10px;
-    width: 300px;
-    height: 150px;
-    border: black solid 0.5px;  
-    font-size: 10px;
-    
-    display: grid;
-    
-    text-align: center;
+#commentBox{
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -33,8 +25,6 @@
     display: flex;
     flex-direction: column;
 }
-
-
 
 .commentStudent{
     display: flex;
@@ -46,11 +36,28 @@
     font-size: 12px;
 }
 
-#newComment{
+#newComment, #newComment1{
     text-decoration: underline;
     display: flex;
     justify-content: center;
     align-items: flex-end;
-   
-   
+}
+
+#newComment, #newComment1{
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 5px;
+}
+
+#commentAboutCity, #commentAboutProgramme{
+    margin-top: 10px;
+    width: 300px;
+    height: 160px;
+    border: black solid 0.5px;  
+    font-size: 10px;
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
