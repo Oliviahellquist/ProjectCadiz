@@ -16,16 +16,18 @@ function showMore (event ) {
         console.log ("Hello");
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
-        event.target.style.margin = "357px 0 0 0";
+        event.target.style.margin = "357px 25px 0 0";
+        event.target.style.padding = "12px 19px";
     }
     else 
     {
         console.log ("STÄNGER");
         //div.remove();
-        event.target.style.margin = "0 0 0 0";
+        event.target.style.margin = "0 25px 0 0";
         console.log (event.target.nextElementSibling);
         event.target.nextElementSibling.remove();
         event.target.innerHTML = "Visa Mer";
         //window.location.reload();
+        event.target.style.padding = "12px 30px";
     }
 }
