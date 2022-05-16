@@ -85,6 +85,7 @@ function programmeName(){
         <h1 class="title">${name}</h1>
         <h4>${level}</h4>
         <div id="infoText">${uni.name}, ${cit.name}, ${cou.name}
+        <button class="showMoreBtn">Visa Mer</button>
        
         </div>
 
