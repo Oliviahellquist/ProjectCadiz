@@ -1,14 +1,3 @@
-
-//Array of all universities
-function getAllUniversities() {
-    const allUniversities = [];
-
-    for (let i = 0; i < UNIVERSITIES.length; i++) {
-        allUniversities.push(UNIVERSITIES[i])
-    }
-    return allUniversities; 
-}
-
 //Array of all programmes
 function getAllProgrammes() {
     const allProgrammes = [];
@@ -19,28 +8,6 @@ function getAllProgrammes() {
     return allProgrammes; 
 }
 
-
-//Array of all cities
-function getAllCities() {
-    const allCities = [];
-
-    for (let i = 0; i < CITIES.length; i++) {
-        allCities.push(CITIES[i])
-    }
-    return allCities; 
-}
-
-
-//Function to get country Id
-
-function getCountryById(idCountry){
-    let cou = COUNTRIES.find(country => {
-        return country.id == idCountry
-    });
-    return cou;
-}
-
-
 //Function to get university Id
 function getUniversitiById(Id){
     let uni = UNIVERSITIES.find(university => {
@@ -49,42 +16,56 @@ function getUniversitiById(Id){
     return uni;
 }
 
-//Function to get city Id
-function getCityById(idCity){
-    let cit = CITIES.find(city => {
-        return city.id == idCity
-    });
-    return cit;
-}
-
 
 function programmeName(){
     let programmeGrid = document.getElementById("utbBoxContainer");
     let programmes = getAllProgrammes();
-    let university = getAllUniversities();
-    let cities = getAllCities();
+
 
     for (let i = 0; i < programmes.length; i++) {
 
         let name = programmes[i].name;
-
         let universityID = programmes[i].universityID;
         let uni = getUniversitiById(universityID);
+        let level = getLevel(programmes[i].level);
 
-        let cityID = university[i].cityID;
-        let cit = getCityById(cityID);
+        let countryInfo;
+//Country name
+        for ( let university of UNIVERSITIES){
+            if ( programmes[i].universityID == university.id){
+                for( let city of CITIES){
+                    if( university.cityID == city.id){
+                        for ( let country of COUNTRIES){
+                            if ( city.countryID == country.id){
+                                countryInfo = country.name
+                            }
+                        }
+                    }
+                }
+            }
+        }
 
-        let countryID = cities[i].countryID;
-        let cou = getCountryById(countryID);
+        let cityInfo;
+//City name
+        for ( let university of UNIVERSITIES){
+            if ( programmes[i].universityID == university.id){
+                for( let city of CITIES){
+                    if( university.cityID == city.id){
+                    
+                        cityInfo = city.name
+    
+                    }
+                }
+            }
+        }
 
-        let level = programmes[i].level;
-      
+        
         let div = document.createElement("div");
         div.classList.add("utbBox");
         div.innerHTML = `
         <h1 class="title">${name}</h1>
         <h4>${level}</h4>
-        <div id="infoText">${uni.name}, ${cit.name}, ${cou.name}
+        <div id="infoText">${uni.name}, ${cityInfo}, ${countryInfo}
         <button class="showMoreBtn">Visa Mer</button>
        
         </div>
@@ -94,5 +75,22 @@ function programmeName(){
     }
 
 }
+
+//Egentligen kan man göra en loop med det var bara tre objekt... 
+function getLevel(resultat){
+    if (resultat == 0){
+        return "Bachelor"
+    }
+    if (resultat == 1){
+        return "Master"
+    }
+    if (resultat == 2){
+        return "Doctorate"
+    }
+}
+
 programmeName();
+
+
+
 

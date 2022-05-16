@@ -9,11 +9,10 @@ function showMore (event ) {
     let div = document.createElement("div");
     console.log(event.target.parentElement);
     if (event.target.innerHTML == "Visa Mer") {
-        console.log("ÖPPNAR");
+       
         div.style.height = "400px";
         div.style.width = "780px";
         box.appendChild (div);
-        console.log ("Hello");
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
         event.target.style.margin = "357px 25px 0 0";
@@ -21,7 +20,7 @@ function showMore (event ) {
     }
     else 
     {
-        console.log ("STÄNGER");
+        
         //div.remove();
         event.target.style.margin = "0 25px 0 0";
         console.log (event.target.nextElementSibling);

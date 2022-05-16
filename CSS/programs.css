@@ -72,6 +72,10 @@ h1{
     cursor: pointer;
 }
 
+h4{
+  color: rgb(66, 65, 65);
+}
+
 .btn {
   border: none;
   outline: none;
