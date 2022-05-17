@@ -1,24 +1,8 @@
-#grade {
-    display: flex;
-    height: 40px;
-    gap: 5px;
 
-    width: 300px;
-}
-
-#first, #second, #third, #fourth{
-    width: 100px;
-    border: black solid 0.5px;
-    font-family: var( --mainFont);
-    text-align: center;
-    font-size: 10px;
-}
-
-#commentBox{
+#commentBox1{
     display: flex;
     flex-direction: column;
 }
-
 
 .name{
     margin-top: 10px;
@@ -36,22 +20,19 @@
     font-size: 12px;
 }
 
-#newComment, #newComment1{
-    text-decoration: underline;
+
+
+#newComment1{
     display: flex;
+    text-decoration: underline;
     justify-content: center;
     align-items: flex-end;
-}
-
-#newComment, #newComment1{
-    display: flex;
-    justify-content: center;
-    align-items: end;
+    
     margin-bottom: 5px;
     cursor: pointer;
 }
 
-#commentAboutCity, #commentAboutProgramme{
+#commentAboutProgramme{
     margin-top: 10px;
     width: 300px;
     height: 160px;

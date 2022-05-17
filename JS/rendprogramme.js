@@ -65,10 +65,10 @@ function programmeName(){
         div.innerHTML = `
         <h1 class="title">${name}</h1>
         <h4>${level}</h4>
-        <div id="infoText">${uni.name}, ${cityInfo}, ${countryInfo}
+        <p>${uni.name}, ${cityInfo}, ${countryInfo}   </p>
         <button class="showMoreBtn">Visa Mer</button>
        
-        </div>
+  
 
         `;
         programmeGrid.appendChild(div);

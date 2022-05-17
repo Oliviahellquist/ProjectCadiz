@@ -190,3 +190,53 @@ main {
   color: black;
 }
 
+.newBox{
+  background-color: rgba(228, 228, 228, 0.911);
+}
+
+
+
+#commentBox1{
+  display: flex;
+  flex-direction: column;
+}
+
+.name{
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.commentStudent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  color: white;
+  background-color: var(--colorRed);
+  font-size: 12px;
+}
+
+
+#newComment1{
+  display: flex;
+  text-decoration: underline;
+  justify-content: center;
+  align-items: flex-end;
+  
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+#commentAboutProgramme{
+  margin-top: 10px;
+  width: 300px;
+  height: 160px;
+  border: black solid 0.5px;  
+  font-size: 10px;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+

@@ -1,26 +1,10 @@
-#grade {
-    display: flex;
-    height: 40px;
-    gap: 5px;
-
-    width: 300px;
-}
-
-#first, #second, #third, #fourth{
-    width: 100px;
-    border: black solid 0.5px;
-    font-family: var( --mainFont);
-    text-align: center;
-    font-size: 10px;
-}
 
 #commentBox{
     display: flex;
     flex-direction: column;
 }
 
-
-.name{
+#name{
     margin-top: 10px;
     display: flex;
     flex-direction: column;
