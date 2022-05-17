@@ -2,6 +2,11 @@ body{
   background-color: var(--backgroundColor);
   margin: 0;
 }
+
+html{
+  scroll-behavior: smooth;
+}
+
 #redStripe{
   width: 100vw;
   height: 100px;
@@ -208,3 +213,29 @@ main {
   height: 400px;
   width: 200px;
 }
+
+.to-top{
+  background-color: rgb(71, 71, 71);
+  position: fixed;
+  bottom: 16px;
+  right: 32px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(247, 243, 243);
+  font-size: 32px;
+  opacity: 0;
+  pointer-events: none;
+  transition: all .4s;
+}
+
+.to-top.active{
+  bottom: 32px;
+  pointer-events: auto;
+  opacity: 1;
+}
+
