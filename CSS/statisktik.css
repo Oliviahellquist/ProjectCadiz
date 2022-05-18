@@ -1,9 +1,6 @@
 body {
-    height: 100vh; 
-    margin: 0%;
-    display: flex;
-    float: right;
-    
+    background-color: var(--backgroundColor);
+    margin: 0;
 }
 
 .wrapper {
@@ -35,17 +32,27 @@ body {
     font-size: 33px;
 }
 .container {
-    
+
     height: 450px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+.newBox {
+
+    height: 450px;
+    display: flex;
+    justify-content:space-evenly;
+    
 }
 #box-1 {
     background-color: #C4C4C4;
     margin-top: 41.5px;
     width: 180px;
     font-family: var(--titleFont);
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
 }
 
 #box-1 div {
