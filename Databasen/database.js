@@ -147,17 +147,17 @@ const COUNTRIES = [
         "flag": "uk.png",
         "text": "Storbritannien, formellt F\u00f6renade konungariket Storbritannien och Nordirland med kortform F\u00f6renade kungariket, \u00e4r en suver\u00e4n stat som best\u00e5r av \u00f6ar bel\u00e4gna vid den nordv\u00e4stra kusten av den europeiska kontinenten. Landet omfattar \u00f6n Storbritannien, den nord\u00f6stra delen av \u00f6n Irland och m\u00e5nga mindre \u00f6ar.",
         "imagesNormal": [
-            "united kingdom_normal_1.jpg",
-            "united kingdom_normal_2.jpg",
-            "united kingdom_normal_3.jpg",
-            "united kingdom_normal_4.jpg",
-            "united kingdom_normal_5.jpg",
-            "united kingdom_normal_6.jpg"
+            "united_kingdom_normal_1.jpg",
+            "united_kingdom_normal_2.jpg",
+            "united_kingdom_normal_3.jpg",
+            "united_kingdom_normal_4.jpg",
+            "united_kingdom_normal_5.jpg",
+            "united_kingdom_normal_6.jpg"
         ],
         "imagesBig": [
-            "united kingdom_big_1.jpg",
-            "united kingdom_big_2.jpg",
-            "united kingdom_big_3.jpg"
+            "united_kingdom_big_1.jpg",
+            "united_kingdom_big_2.jpg",
+            "united_kingdom_big_3.jpg"
         ]
     },
     {

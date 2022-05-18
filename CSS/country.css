@@ -16,7 +16,6 @@ body{
     background-position: right;
 }
 
-
 #header :first-child{
     justify-content: left;
 }
@@ -29,22 +28,6 @@ body{
 h1{
     font-family: var(--titleFont);
     margin: 0px;
-}
-
-#article > div{
-    height: 100vh;
-    width: 70vw;
-    background-color: rgb(255, 255, 255);
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-#article{
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .navbar{
@@ -61,7 +44,53 @@ h1{
     margin-top: 20px; 
 }
 
+
+
+
+
+
 #title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#article{
+    height: 100vh;
+    width: 70vw;
+    background-color: rgb(255, 255, 255);
+
+    display: flex;
+    margin-top: 30px;
+}
+
+.info{
+    background-color: gainsboro;
+    height: 270px;
+
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+p{
+    margin-left: 20px;
+    margin-right: 20px;  
+}
+
+#images{
+    height: 270px;
+    width: 500px;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#center{
     display: flex;
     justify-content: center;
     align-items: center;
