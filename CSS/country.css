@@ -56,18 +56,20 @@ h1{
 }
 
 #article{
-    height: 100vh;
     width: 70vw;
-    background-color: rgb(255, 255, 255);
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     margin-top: 30px;
+}
+
+
+#articleCity{
+    width: 70vw;
 }
 
 .info{
     background-color: gainsboro;
     height: 270px;
-
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -82,7 +84,7 @@ p{
 
 #images{
     height: 270px;
-    width: 500px;
+    width: 35vw;
     background-size: cover;
 
     display: flex;
@@ -92,6 +94,80 @@ p{
 
 #center{
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.image{
+    height: 270px;
+    width: 35vw;
+    background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cityInfo{
+   display: grid;
+   grid-template-columns: 1fr 1fr;
+}
+
+.textbox{
+background-color: gainsboro;
+height: 270px;
+display: flex;
+flex-direction: column;
+text-align: center;
+justify-content: center;
+align-items: center;
+}
+
+
+
+
+
+
+
+
+#commentBox{
+    display: flex;
+    flex-direction: column;
+}
+
+#name{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.commentStudent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    color: white;
+    background-color: var(--colorBlue);
+    font-size: 12px;
+}
+
+#newComment{
+    text-decoration: underline;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    margin-bottom: 5px;
+}
+
+#commentAboutCity{
+    margin-top: 10px;
+    width: 300px;
+    height: 160px;
+    border: black solid 0.5px;  
+    font-size: 10px;
+    text-align: center;
+
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
 }
