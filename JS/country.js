@@ -114,6 +114,7 @@ function renderCity(){
         return false;
     });
 
+
     for (let i = 0; i < city.length; i++){
         let div = document.createElement("div");
         div.classList.add("cityInfo");
@@ -129,8 +130,27 @@ function renderCity(){
             <div class="commentBox${i}"></div>
             <div class="newComment">Nästa Kommentar</div>
         </div>
-
-        <div class="grade">
+        
+        <div id="gradeWrapper">
+            <h2 id="gradeTitle">Betyg</h2>
+            <div class="grade">
+                <div id="first">
+                    <div>Antal Soldagar</div>
+                    <div>${city[i].sun}/365</div>
+                </div>
+                <div id="second">
+                    <div>Maten</div>
+                    <div>${renderFoodGrade(i)}/5</div>
+                </div>
+                <div id="third">
+                    <div>Boende</div>
+                    <div>${renderHousingGrade(i)}/5</div>
+                </div>
+                <div id="fourth">
+                    <div>Uteliv</div>
+                    <div>${renderFunGrade(i)}/5</div>
+                </div>
+            </div>
         </div>
       
         `;
@@ -139,6 +159,66 @@ function renderCity(){
     }
     
 }
+
+function renderSunGrade(i) {
+    let SunnydaysArray = [];
+    for (let city of DB.CITIES) {
+        if (i == city.id) {
+            SunnydaysArray.push(city.sun);
+        }
+    }
+    return SunnydaysArray
+}
+
+
+function renderFoodGrade(i) {
+    let foodGradeArray = [];
+    for (let grade of DB.COMMENTS_CITY) {
+        if (i == grade.cityID) {
+            foodGradeArray.push(grade.stars.food);
+        }
+    }
+    return gradeAvg(foodGradeArray)
+}
+
+
+function renderHousingGrade(i) {
+    let houseGradeArray = [];
+    for (let grade of DB.COMMENTS_CITY) {
+        if (i == grade.cityID) {
+            houseGradeArray.push(grade.stars.accomodation);
+        }
+    }
+    return gradeAvg(houseGradeArray)
+}
+
+
+function renderFunGrade(i) {
+    let funGradeArray = [];
+    for (let grade of DB.COMMENTS_CITY) {
+        if (i == grade.cityID) {
+            funGradeArray.push(grade.stars.out);
+        }
+    }
+    return gradeAvg(funGradeArray)
+}
+
+
+function gradeAvg(a) {
+    var i = 0, sum = 0, arrayLength = a.length;
+    while (i < arrayLength) {
+        sum = sum + a[i++];
+}
+    return roundString(sum / arrayLength, 0);
+}
+
+function roundString(numberWithManyDecimals, decimals){
+    var rounded = Math.pow(10, decimals);
+    return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
+  }
+
+
+
 
 //function random comment city
 //Det behövs egentligrn inte, men jag tycker det har vait enklare 

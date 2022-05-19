@@ -179,7 +179,7 @@ align-items: center;
     
 
 }
-
+/*
 .grade{
   
     display: grid;
@@ -187,4 +187,37 @@ align-items: center;
     border: black solid 0.5px;
     background-color: rgb(243, 243, 243);
     height: 270px;
+}
+*/
+.grade {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    height: 75px;
+    gap: 10px;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 12px;
+}
+
+#first, #second, #third, #fourth{
+    width: 100px;
+    border: black solid 0.5px;
+    font-family: var( --mainFont);
+    
+    font-size: 15px;
+    background-color: rgb(243, 243, 243);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+
+#gradeTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+
+#gradeWrapper {
+    margin-top: 10%;
 }
