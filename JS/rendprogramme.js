@@ -91,6 +91,103 @@ function getLevel(resultat){
 
 programmeName();
 
+function getAllCountries() {
+    const allCountries = [];
+
+    for (let i = 0; i < COUNTRIES.length; i++) {
+        allCountries.push(COUNTRIES[i])
+    }
+    return allCountries; 
+}
+
+function countryName(){
+    let countryGrid = document.getElementById("wrapper1");
+    let countries = getAllCountries();
+  
+    for (let i = 0; i < countries.length; i++) {
+        let name = countries[i].name;
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection");
+        div.innerHTML = `
+        <button class="btn">${name} </button>
+         `;
+     
+        countryGrid.appendChild(div);
+       
+    }
+}
+ countryName();
+
+ function getAllFields() {
+    const allFields = [];
+
+    for (let i = 0; i < FIELDS.length; i++) {
+        allFields.push(FIELDS[i])
+    }
+    return allFields; 
+}
+
+function fieldName(){
+    let fieldGrid = document.getElementById("wrapper2");
+    let fields = getAllFields();
+  
+    for (let i = 0; i < FIELDS.length; i++) {
+        let name = fields[i].name;
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection2");
+        div.innerHTML = `
+        <button class="btn">${name} </button>
+         `;
+     
+        fieldGrid.appendChild(div);
+       
+    }
+}
+ fieldName();
 
 
 
+function levelName(){
+    let levelGrid = document.getElementById("wrapper3");
+  
+    for (let i = 0; i < LEVELS.length; i++) {
+        
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection3");
+        div.innerHTML = `
+        <button class="btn">${[i]} </button>
+         `;
+     
+        levelGrid.appendChild(div);
+       
+    }
+}
+ levelName();
+
+
+
+//buttons
+
+/*
+function countryDiv(data) {
+ 
+        let wrapper = document.getElementsByClassName(".filterSelection");
+    for(let i = 0; i < COUNTRIES.length; i++) {
+        wrapper.append(countryDiv(COUNTRIES[i]));
+    }
+    let country = document.createElement("div");
+    country.classList.add("country");
+
+    
+
+    let countryNameTitle = document.createElement("div")
+    countryNameTitle.classList.add("countryNameTitle");
+
+    countryNameTitle.innerHTML = `${data.name}`;
+}
+  
+
+*/

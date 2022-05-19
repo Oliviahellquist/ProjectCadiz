@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../CSS/programs.css">
     <link rel="stylesheet" href="../CSS/menu.css">
     <link rel="stylesheet" href="../CSS/customProperties.css">
+    <link rel="stylesheet" href="../CSS/filterProgrammes.css">
     <title>Study Abroad</title>
 </head>
 <body>
@@ -51,12 +52,27 @@
 
 <main>
     <div id="filterContainer">
-       <div class="filterHeader">
-           <div>Filtrera</div>
-           <button class="btnClear">Rensa</button>          
+        <div class="filterHeader">
+            <div>Filtrera</div>
+            <button class="btnClear" >Rensa</button>
+        </div>
+   
+        <div id="filterSectionName">Länder
+            <div id="wrapper1"></div>
+        </div>
+      
+  
+        <div id="filterSectionField">Ämne
+            <div id="wrapper2"></div>
+        </div>
 
+
+        <div id="filterSectionLevel">Nivå
+            <div id="wrapper3"></div>
         </div>
     </div>
+ 
+
 
 
    <div id="utbBoxContainer">
@@ -71,6 +87,7 @@
 <script src="../JS/rendprogramme.js"></script>
 <script src="../Databasen/commentsProgramme.js"></script>
 <script src="../JS/statistik.js"></script>
+<script src="../JS/filterPrograms.js"></script>
 
 </body>
 </html>

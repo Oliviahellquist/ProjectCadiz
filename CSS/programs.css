@@ -100,18 +100,20 @@ h4{
 }
 
 .filterSection{
-  margin: 5px ;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
   
 }
 
-.filterSectionName{
+#filterSectionName, #filterSectionField, #filterSectionLevel{
   padding-left: 14px;
+  padding-right: 14px;
   padding-top: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#wrapper1, #wrapper2, #wrapper3{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+}
 
 .navbar{
   display: grid;
@@ -167,8 +169,7 @@ h4{
 .UtbBox>p {
   color: black;
   margin: 5px 0px 25px 25px;
-  font-family: var(--titleFont);
-  
+  font-family: var(--titleFont); 
 }
 
 .showMoreBtn {
@@ -189,4 +190,7 @@ main {
 .title{
   color: black;
 }
+
+
+
 
