@@ -106,11 +106,11 @@ function renderCititesByCountryID(i) {
     return cityArray
 }
 
+
 //Function to get the cities in the chosen country
 function renderCity(){
     let article = document.getElementById("articleCity");
     let cities = getAllCities();
-    
     let nameId = window.sessionStorage.getItem("land"); 
     let city = cities.find(city => {
         if (city.countryID == nameId) {
@@ -120,8 +120,7 @@ function renderCity(){
     });
 
 
-
-
+    for (let i = 0; i < renderCititesByCountryID(nameId).length; i++) {
         let div = document.createElement("div");
         div.classList.add("cityInfo");
         div.innerHTML = `
@@ -142,7 +141,7 @@ function renderCity(){
         `;
         article.appendChild(div);
 }
-
+}
 
 /* //function random comment city
 function getAllComments() {
