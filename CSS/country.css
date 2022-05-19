@@ -137,13 +137,13 @@ align-items: center;
 
 
 
-#commentBox{
+.commentBox{
     display: flex;
     flex-direction: column;
 }
 
 
-#name{
+.name{
     margin-top: 10px;
     display: flex;
     flex-direction: column;
@@ -159,7 +159,7 @@ align-items: center;
     font-size: 12px;
 }
 
-#newComment{
+.newComment{
     text-decoration: underline;
     display: flex;
     justify-content: center;
@@ -167,7 +167,7 @@ align-items: center;
     margin-bottom: 5px;
 }
 
-#commentAboutCity{
+.commentAboutCity{
 
     font-size: 15px;
     text-align: center;
@@ -180,7 +180,7 @@ align-items: center;
 
 }
 
-#grade{
+.grade{
   
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;

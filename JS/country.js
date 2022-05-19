@@ -79,6 +79,17 @@ function renderCountryImage(){
     countryImage.appendChild(div);
 }
 
+
+
+
+
+
+
+
+
+
+
+
 function getAllCities() {
     const allCities = [];
 
@@ -88,62 +99,49 @@ function getAllCities() {
     return allCities; 
 }
 
-//Function to get city Id
-function getCityById(Id){
-    let cit = CITIES.find(city => {
-        return city.id == Id
-    });
-    return cit;
-}
-
-function renderCititesByCountryID(i) {
-    let cityArray = [];
-    for (let city of DB.CITIES) {
-        if (i == city.countryID) {
-            cityArray.push(city.name);
-        }
-    }
-    return cityArray
-}
 
 
 //Function to get the cities in the chosen country
 function renderCity(){
     let article = document.getElementById("articleCity");
     let cities = getAllCities();
+
     let nameId = window.sessionStorage.getItem("land"); 
-    let city = cities.find(city => {
+    let city = cities.filter(city => {
         if (city.countryID == nameId) {
             return true;
         }
         return false;
     });
 
-
-    for (let i = 0; i < renderCititesByCountryID(nameId).length; i++) {
+    for (let i = 0; i < city.length; i++){
         let div = document.createElement("div");
         div.classList.add("cityInfo");
         div.innerHTML = `
-        <div class="image" style="background-image: url(../Images/${city.imagesNormal[1]});"></div>
+        <div class="image" style="background-image: url(../Images/${city[i].imagesNormal[1]});"></div>
         <div class="textbox">
-            <h2 id="title">${city.name}</h2>
-            <p>${city.text}</p>
+            <h2 id="title">${city[i].name}</h2>
+            <p>${city[i].text}</p>
         </div>
 
-        <div id="commentAboutCity">
+        <div class="commentAboutCity">
             <div class="commentStudent">Kommentar från studenter om staden</div>
-            <div id ="commentBox"></div>
-            <div id="newComment">Nästa Kommentar</div>
+            <div class="commentBox${i}"></div>
+            <div class="newComment">Nästa Kommentar</div>
         </div>
 
-        <div id="grade"></div>
-        
+        <div class="grade">
+        </div>
+      
         `;
         article.appendChild(div);
-}
+        cityComment(i);
+    }
+    
 }
 
-/* //function random comment city
+//function random comment city
+//Det behövs egentligrn inte, men jag tycker det har vait enklare 
 function getAllComments() {
     const allComments = [];
 
@@ -154,8 +152,9 @@ function getAllComments() {
 }
 
 
-function cityComment(){
-    let studentsComment = document.getElementById("commentBox");
+function cityComment(i){
+    let studentsComment = document.querySelector(`.commentBox${i}`);
+    console.log(studentsComment)
     studentsComment.innerHTML = "";
     let comments = getAllComments();
   
@@ -168,17 +167,14 @@ function cityComment(){
         div.classList.add("commentCity");
 
         div.innerHTML = `
-        <div id="name">${alias}, ${date.year}-${date.month}-${date.day}
+        <div class="name">${alias}, ${date.year}-${date.month}-${date.day}
         <p>"${text}"</p>
         `;
 
         studentsComment.appendChild(div);
-        document.getElementById("newComment").addEventListener("click", cityComment);
+        document.querySelector(".newComment").addEventListener("click", cityComment);
+       console.log(studentsComment); 
 }
-
-cityComment();
-
-
 
 function randomCommentCity(comments){
     let nr = Math.floor(Math.random() * comments.length) + 1;
@@ -187,7 +183,7 @@ function randomCommentCity(comments){
 
 }
 
-*/
+
 //Direktkods
 
 renderCity();
