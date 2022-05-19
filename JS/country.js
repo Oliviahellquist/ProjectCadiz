@@ -9,7 +9,6 @@ function getAllCountries() {
 }
 
 
-
 function renderCountry(){
     let countryTitle = document.getElementById("title");
     let countries = getAllCountries();
@@ -137,25 +136,15 @@ function renderCity(){
             <div id ="commentBox"></div>
             <div id="newComment">Nästa Kommentar</div>
         </div>
-        
+
+        <div id="grade"></div>
         
         `;
         article.appendChild(div);
 }
 
-function renderCititesByCountryID(i) {
-    let cityArray = [];
-    for (let city of DB.CITIES) {
-        if (i == city.countryID) {
-            cityArray.push(city.name);
-        }
-    }
-    return cityArray
-}
 
-
-/*
-//function random comment city
+/* //function random comment city
 function getAllComments() {
     const allComments = [];
 
@@ -188,6 +177,8 @@ function cityComment(){
         document.getElementById("newComment").addEventListener("click", cityComment);
 }
 
+cityComment();
+
 
 
 function randomCommentCity(comments){
@@ -198,12 +189,8 @@ function randomCommentCity(comments){
 }
 
 */
-
-
-
-
 //Direktkods
-//cityComment();
+
 renderCity();
 renderCountry();
 renderCountryInfo();

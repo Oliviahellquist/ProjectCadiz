@@ -68,7 +68,7 @@ h1{
 }
 
 .info{
-    background-color: gainsboro;
+    background-color: rgb(243, 243, 243);
     height: 270px;
     display: flex;
     flex-direction: column;
@@ -97,6 +97,7 @@ p{
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .image{
@@ -115,7 +116,7 @@ p{
 }
 
 .textbox{
-background-color: gainsboro;
+background-color: rgb(243, 243, 243);
 height: 270px;
 display: flex;
 flex-direction: column;
@@ -131,10 +132,16 @@ align-items: center;
 
 
 
+
+
+
+
+
 #commentBox{
     display: flex;
     flex-direction: column;
 }
+
 
 #name{
     margin-top: 10px;
@@ -161,13 +168,23 @@ align-items: center;
 }
 
 #commentAboutCity{
-    margin-top: 10px;
-    width: 300px;
-    height: 160px;
-    border: black solid 0.5px;  
-    font-size: 10px;
-    text-align: center;
 
+    font-size: 15px;
+    text-align: center;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    border: black solid 0.5px;
+    background-color: rgb(243, 243, 243);
+    height: 270px;
+    
+
+}
+
+#grade{
+  
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    border: black solid 0.5px;
+    background-color: rgb(243, 243, 243);
+    height: 270px;
 }

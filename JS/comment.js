@@ -42,3 +42,12 @@ function randomCommentCity(comments){
     return nr
 
 }
+
+
+
+
+
+
+
+
+
