@@ -179,12 +179,17 @@ h4{
 
 .showMoreBtn {
   float: right;
-  margin-right: 25px;
+  margin:12px 0 0 0;
   border: none;
   padding: 12px 30px;
   background-color: var(--colorRed);
   cursor: pointer;
   font-size: 16px;
+  margin-left: 100px;
+}
+
+.containerKnappen {
+  height: 120px;
 }
 
 main {
@@ -265,7 +270,7 @@ main {
 }
 
 #commentAboutProgramme{
-  margin-top: 10px;
+  margin-top: 44px;
   width: 300px;
   height: 160px;
   border: black solid 0.5px;  

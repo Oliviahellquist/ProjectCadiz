@@ -4,6 +4,7 @@ let showMoreBtn = document.querySelectorAll(".showMoreBtn");
 showMoreBtn.forEach(Btn => Btn.addEventListener("click", showMore));
 
 function showMore (event ) {
+    //let knappen = document.querySelector(".containerKnappen");
     let box = event.target.parentElement;
     let div = document.createElement("div");
     div.classList.add("newBox");
@@ -26,11 +27,11 @@ function showMore (event ) {
                 </div>
                 <div class="siffror">
                  <div class="Year">
-                    <div class="rad-1"></div>
-                    <div class="rad-2"></div>
-                    <div class="rad-3"></div>
-                    <div class="rad-4"></div>
-                    <div class="rad-5"></div>
+                    <div class="rad-1">2018</div>
+                    <div class="rad-2">2019</div>
+                    <div class="rad-3">2020</div>
+                    <div class="rad-4">2021</div>
+                    <div class="rad-5">2022</div>
                  </div>
                  <div class="Rate">
                     <div class="rad-1"></div>
@@ -55,24 +56,24 @@ function showMore (event ) {
         <div id ="commentBox1"></div>
         <div id="newComment1">Nästa Kommentar</div>
     </div>
+
+    
     `;
     
 
     if (event.target.innerHTML == "Visa Mer") {
        
         div.style.height = "400px";
-        div.style.width = "900px";
+        div.style.width = "1000px";
         div.style.position = "relative";
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
-        event.target.style.margin = "0 25px 0 0";
+        event.target.style.margin = "12px 0 0 0";
         event.target.style.padding = "12px 19px";
         box.append (div);
         programComment(event);
         console.log(event)
-        event.target.style.position = "absolute";
-        event.target.style.top = "600px"
-        event.target.style.left = "1200px"
+        //knappen.style.height ("1000px")
         let ch = box.querySelector(".Year").children;
         console.log (box);
         statisticsTable (box);
@@ -80,9 +81,10 @@ function showMore (event ) {
     }
     else 
     {
-        
+        //event.target.style.position = null;
         //div.remove();
-        event.target.style.margin = "0 25px 0 0";
+      
+        event.target.style.margin = "12px 0 0 0";
         event.target.nextElementSibling.remove();
         event.target.innerHTML = "Visa Mer";
         //window.location.reload();
@@ -193,8 +195,8 @@ function statisticsTable (element) {
                 boxOne[4].firstChild.innerHTML = "Visum Krav: "+COUNTRIES[n].visa;
             }
 
-            boxOne[5].firstChild.innerHTML = "Lärare Medelbetyg: ?";
-            boxOne[6].firstChild.innerHTML = "Kurser Medelbetyg: ?";
+            boxOne[5].firstChild.innerHTML = "Lärare Medelbetyg: " + renderTeacherGrade (i);
+            boxOne[6].firstChild.innerHTML = "Kurser Medelbetyg: " + renderCoursesGrade (i);
            
             
            
