@@ -1,4 +1,4 @@
-//Tar emot city id som en parameter och sedan tar alla kommentarer med paramternsvärde och returnerar deras medelvärde avrundat
+//Tar emot city id som en parameter och sedan tar alla kommentarer med paramternsvärde och returnerar en array med deras medelvärde avrundat
 function renderFunGrade(i) {
     let funGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
