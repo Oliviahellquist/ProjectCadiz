@@ -223,11 +223,13 @@ function renderCommentCity(i){
     return cityComment;
 }
 
+
 function renderCommentCityName(i){
     let cityCommentName = [];
     for (let name of DB.COMMENTS_CITY) {
         if (i == name.cityID) {
             cityCommentName.push(name.alias);
+        
         }
     }
     return cityCommentName;
@@ -244,12 +246,12 @@ function renderCommentCityYear(i){
 }
 
 
-
+/*
 function randomCommentCity(comments){
     let nr = Math.floor(Math.random() * comments.length) + 1;
     return nr
 }
-
+*/
 
 
 function roundString(numberWithManyDecimals, decimals){
