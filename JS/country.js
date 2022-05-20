@@ -140,15 +140,15 @@ function renderCity(){
                 </div>
                 <div id="second">
                     <div>Maten</div>
-                    <div>${renderFoodGrade(i)}/5</div>
+                    <div>${renderFoodGrade(city[i].id)}/5</div>
                 </div>
                 <div id="third">
                     <div>Boende</div>
-                    <div>${renderHousingGrade(i)}/5</div>
+                    <div>${renderHousingGrade(city[i].id)}/5</div>
                 </div>
                 <div id="fourth">
                     <div>Uteliv</div>
-                    <div>${renderFunGrade(i)}/5</div>
+                    <div>${renderFunGrade(city[i].id)}/5</div>
                 </div>
             </div>
         </div>
