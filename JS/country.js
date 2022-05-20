@@ -8,7 +8,7 @@ function getAllCountries() {
     return allCountries;
 }
 
-
+//tar det landet som man klickade på från countries.HTML
 function renderCountry(){
     let countryTitle = document.getElementById("title");
     let countries = getAllCountries();
@@ -82,15 +82,6 @@ function renderCountryImage(){
 
 
 
-
-
-
-
-
-
-
-
-
 function getAllCities() {
     const allCities = [];
 
@@ -100,7 +91,7 @@ function getAllCities() {
     return allCities; 
 }
 
-
+//functionen går igenom de städer som ingår i landet
 
 //Function to get the cities in the chosen country
 function renderCity(){
@@ -129,7 +120,7 @@ function renderCity(){
         <div class="commentAboutCity">
             <div class="commentStudent">Kommentar från studenter om staden</div>
             <div class="commentBox${i}"></div>
-            <div class="newComment">Nästa Kommentar</div>
+            <h6 class="newComment${i}">Nästa Kommentar</h6>
         </div>
         
         <div id="gradeWrapper">
@@ -141,7 +132,7 @@ function renderCity(){
                 </div>
                 <div id="second">
                     <div>Maten</div>
-                    <div>${renderFoodGrade(i)}/5</div>
+                    <div>${renderFoodGrade()}/5</div>
                 </div>
                 <div id="third">
                     <div>Boende</div>
@@ -161,6 +152,13 @@ function renderCity(){
     
 }
 
+
+
+
+
+
+
+//function that loop through cities and return its sunnydays
 function renderSunGrade(i) {
     let SunnydaysArray = [];
     for (let city of DB.CITIES) {
@@ -220,9 +218,11 @@ function roundString(numberWithManyDecimals, decimals){
 
 
 
-
 //function random comment city
 //Det behövs egentligrn inte, men jag tycker det har vait enklare 
+
+
+
 function getAllComments() {
     const allComments = [];
 
@@ -238,8 +238,9 @@ function cityComment(i){
     console.log(studentsComment)
     studentsComment.innerHTML = "";
     let comments = getAllComments();
-  
+
     let number = randomCommentCity(comments)
+    
 
         let alias = comments[number].alias;
         let text = comments[number].text;
@@ -254,13 +255,13 @@ function cityComment(i){
         `;
 
         studentsComment.appendChild(div);
-        document.querySelector(".newComment").addEventListener("click", cityComment);
-       console.log(studentsComment); 
+        document.querySelector(`.newComment${i}`).addEventListener("click", cityComment);
+   
 }
 
 function randomCommentCity(comments){
     let nr = Math.floor(Math.random() * comments.length) + 1;
-    console.log(nr);
+
     return nr
 
 }

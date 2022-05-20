@@ -5,7 +5,6 @@
 
 body{
     background-image: url(../Icons/new_york_city_night_evening.jpg);
-    font-family: 'Koulen', cursive;
 }
 
 #socialmedia{
@@ -19,12 +18,12 @@ body{
 }
 
 #pic1{
-    height: 60px;
-    width: 50px;
+    height: 50px;
+    width: 40px;
 }
 #pic2{
-    height: 50px;
-    width: 50px;
+    height: 40px;
+    width: 40px;
 }
 
 #pic1text, #pic2text{
@@ -42,6 +41,11 @@ body{
    margin-left: auto;
    margin-right: auto;
    padding-left: 55px;
+}
+
+.topText{
+    width: 40vw;
+    text-align: center;
 }
 
 .icon {
@@ -62,8 +66,8 @@ body{
 }
 
 p{
-    width: 400px;
-    text-align: center;
+    
+    font-family: var(--mainFont);
 }
 
 #redBox{
@@ -100,6 +104,7 @@ p{
 
 h2{
     font-family: var(--titleFont);
+    margin-bottom: 30px;
 }
 h3{
     font-family: var(--mainFont);
