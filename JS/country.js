@@ -57,6 +57,7 @@ function renderCountryInfo(){
     countryInfo.appendChild(div);
 }
 
+//går igenom alla länder och tar den första bilden eller den andra [1] bilden i imagesNormal
 function renderCountryImage(){
     let countryImage = document.getElementById("article");
     let countriesImage = getAllCountries();
