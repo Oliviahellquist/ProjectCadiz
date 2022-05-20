@@ -97,7 +97,7 @@ function getAllCities() {
 function renderCity(){
     let article = document.getElementById("articleCity");
     let cities = getAllCities();
-
+    
     let nameId = window.sessionStorage.getItem("land"); 
     let city = cities.filter(city => {
         if (city.countryID == nameId) {
@@ -119,8 +119,12 @@ function renderCity(){
 
         <div class="commentAboutCity">
             <div class="commentStudent">Kommentar från studenter om staden</div>
-            <div class="commentBox${i}"></div>
-            <h6 class="newComment${i}">Nästa Kommentar</h6>
+            <div class="commentBox">
+                <h4>${renderCommentCityName(city[i].id)[0]} - ${renderCommentCityYear(city[i].id)[0]}</h4>
+                <p>"${renderCommentCity(city[i].id)[0]}"</p>
+                
+            </div>
+            
         </div>
         
         <div id="gradeWrapper">
@@ -147,27 +151,13 @@ function renderCity(){
       
         `;
         article.appendChild(div);
-        cityComment(i);
+        //cityComment(i);
     }
     
 }
 
 
 
-
-
-
-
-//function that loop through cities and return its sunnydays
-function renderSunGrade(i) {
-    let SunnydaysArray = [];
-    for (let city of DB.CITIES) {
-        if (i == city.id) {
-            SunnydaysArray.push(city.sun);
-        }
-    }
-    return SunnydaysArray
-}
 
 
 function renderFoodGrade(i) {
@@ -192,6 +182,7 @@ function renderHousingGrade(i) {
 }
 
 
+
 function renderFunGrade(i) {
     let funGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -210,11 +201,61 @@ function gradeAvg(a) {
 }
     return roundString(sum / arrayLength, 0);
 }
+/*
+function renderCommentCityName(i){
+    let cityCommentName = [];
+    for (let comment of DB.COMMENTS_CITY) {
+        if (i == comment.cityID) {
+            cityComment.push(comment.alias);
+        }
+        
+    }
+    return cityCommentName
+}
+*/
+function renderCommentCity(i){
+    let cityComment = [];
+    for (let comment of DB.COMMENTS_CITY) {
+        if (i == comment.cityID) {
+            cityComment.push(comment.text);
+        }
+    }
+    return cityComment;
+}
+
+function renderCommentCityName(i){
+    let cityCommentName = [];
+    for (let name of DB.COMMENTS_CITY) {
+        if (i == name.cityID) {
+            cityCommentName.push(name.alias);
+        }
+    }
+    return cityCommentName;
+}
+
+function renderCommentCityYear(i){
+    let cityCommentYear = [];
+    for (let year of DB.COMMENTS_CITY) {
+        if (i == year.cityID) {
+            cityCommentYear.push(year.date.year);
+        }
+    }
+    return cityCommentYear;
+}
+
+
+
+function randomCommentCity(comments){
+    let nr = Math.floor(Math.random() * comments.length) + 1;
+    return nr
+}
+
+
 
 function roundString(numberWithManyDecimals, decimals){
     var rounded = Math.pow(10, decimals);
     return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
-  }
+}
 
 
 
@@ -222,7 +263,7 @@ function roundString(numberWithManyDecimals, decimals){
 //Det behövs egentligrn inte, men jag tycker det har vait enklare 
 
 
-
+/*
 function getAllComments() {
     const allComments = [];
 
@@ -265,7 +306,7 @@ function randomCommentCity(comments){
     return nr
 
 }
-
+*/
 
 //Direktkods
 
