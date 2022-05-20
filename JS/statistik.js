@@ -68,7 +68,7 @@ function showMore (event ) {
         div.style.position = "relative";
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
-        event.target.style.margin = "12px 0 0 0";
+        //event.target.style.margin = "0 0 0 0";
         event.target.style.padding = "12px 19px";
         box.append (div);
         programComment(event);
@@ -84,7 +84,7 @@ function showMore (event ) {
         //event.target.style.position = null;
         //div.remove();
       
-        event.target.style.margin = "12px 0 0 0";
+        //event.target.style.margin = "0 0 0 0";
         event.target.nextElementSibling.remove();
         event.target.innerHTML = "Visa Mer";
         //window.location.reload();
