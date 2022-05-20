@@ -240,8 +240,6 @@ main {
 }
 
 
-
-
 .commentStudent{
   display: flex;
   justify-content: center;
@@ -272,5 +270,7 @@ main {
   text-align: center;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+
+  
 }
 
