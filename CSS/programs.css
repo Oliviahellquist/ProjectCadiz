@@ -48,19 +48,17 @@ h1{
     display: block;
 }
   
-.filterHeader {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-}
+
 
 .filterHeader > div {
-  padding: 16px 10px;
+  padding: 16px 20px;
   font-size: 25px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btnClear {
-  padding: 16px 10px;
+  padding-left: 200px;
+  padding-top: 30px;
   text-align: right;
   font-size: 25px;
   color: var(--colorRed);
@@ -94,28 +92,27 @@ h4{
 #filterContainer{
   border: 6px var(--colorRed) solid;
   width: 300px;
-  height: 500px;
+  height: 350px;
   margin-top: 30px;
   margin-left: 30px;
   background-color: #DEDEDE;
 }
 
-.filterSection, .filterSection2, .filterSection3{
+.filterSection{
   display: grid;
-
-  
 }
 
-#filterSectionName, #filterSectionField, #filterSectionLevel{
-  padding-left: 14px;
-  padding-right: 14px;
+#filterSectionName{
+  padding: 16px 20px;
   padding-top: 10px;
+  padding-bottom: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-#wrapper1, #wrapper2, #wrapper3{
+#wrapper1{
   display: grid;
   grid-template-columns: 1fr 1fr 1fr; 
+  padding-top: 15px;
 }
 
 .navbar{
