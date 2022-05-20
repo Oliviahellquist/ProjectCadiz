@@ -179,7 +179,7 @@ function levelName(){
         let div = document.createElement("div");
         div.classList.add("filterSection3");
         div.innerHTML = `
-        <button class="btn">${[i]} </button>
+        <button class="btn">${LEVELS[i]} </button>
          `;
      
         levelGrid.appendChild(div);
