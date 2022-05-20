@@ -248,8 +248,9 @@ function cityComment(i){
         div.classList.add("commentCity");
 
         div.innerHTML = `
-        <div class="name">${alias}, ${date.year}-${date.month}-${date.day}
+        <h4 class="name">${alias}, ${date.year}-${date.month}-${date.day}</h4>
         <p>"${text}"</p>
+
         `;
 
         studentsComment.appendChild(div);
