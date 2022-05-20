@@ -150,10 +150,9 @@ function renderCity(){
         </div>
       
         `;
-        article.appendChild(div);
-        //cityComment(i);
-    }
-    
+        article.appendChild(div);  
+    } 
+
 }
 
 
@@ -218,6 +217,7 @@ function renderCommentCity(i){
     for (let comment of DB.COMMENTS_CITY) {
         if (i == comment.cityID) {
             cityComment.push(comment.text);
+            
         }
     }
     return cityComment;
