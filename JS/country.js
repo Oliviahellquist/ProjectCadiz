@@ -177,9 +177,6 @@ function renderFoodGrade(i) {
         if (i == grade.cityID) {
             foodGradeArray.push(grade.stars.food);
         }
-            else {
-                return "?"
-            }
     }
     return gradeAvg(foodGradeArray)
 }
@@ -191,9 +188,6 @@ function renderHousingGrade(i) {
         if (i == grade.cityID) {
             houseGradeArray.push(grade.stars.accomodation);
         }
-            else {
-                return "?"
-        }
     }
     return gradeAvg(houseGradeArray)
 }
@@ -204,9 +198,6 @@ function renderFunGrade(i) {
     for (let grade of DB.COMMENTS_CITY) {
         if (i == grade.cityID) {
             funGradeArray.push(grade.stars.out);
-        }
-            else {
-                return "?"
         }
     }
     return gradeAvg(funGradeArray)
