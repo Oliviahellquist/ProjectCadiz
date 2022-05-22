@@ -8,7 +8,7 @@ function getAllCountries() {
     return allCountries;
 }
 
-
+//tar det landet som man klickade på från countries.HTML
 function renderCountry(){
     let countryTitle = document.getElementById("title");
     let countries = getAllCountries();
@@ -80,16 +80,7 @@ function renderCountryImage(){
     countryImage.appendChild(div);
 }
 
-
-
-
-
-
-
-
-
-
-
+//En array över alla städer
 
 function getAllCities() {
     const allCities = [];
@@ -100,13 +91,13 @@ function getAllCities() {
     return allCities; 
 }
 
-
+//functionen går igenom de städer som ingår i landet
 
 //Function to get the cities in the chosen country
 function renderCity(){
     let article = document.getElementById("articleCity");
     let cities = getAllCities();
-
+    
     let nameId = window.sessionStorage.getItem("land"); 
     let city = cities.filter(city => {
         if (city.countryID == nameId) {
@@ -128,8 +119,12 @@ function renderCity(){
 
         <div class="commentAboutCity">
             <div class="commentStudent">Kommentar från studenter om staden</div>
-            <div class="commentBox${i}"></div>
-            <div class="newComment">Nästa Kommentar</div>
+            <div class="commentBox">
+                <h4>${renderCommentCityName(city[i].id)[0]} - ${renderCommentCityYear(city[i].id)[0]}</h4>
+                <p>"${renderCommentCity(city[i].id)[0]}"</p>
+                
+            </div>
+            
         </div>
         
         <div id="gradeWrapper">
@@ -141,7 +136,7 @@ function renderCity(){
                 </div>
                 <div id="second">
                     <div>Maten</div>
-                    <div>${renderFoodGrade(i)}/5</div>
+                    <div>${renderFoodGrade()}/5</div>
                 </div>
                 <div id="third">
                     <div>Boende</div>
@@ -155,21 +150,13 @@ function renderCity(){
         </div>
       
         `;
-        article.appendChild(div);
-        cityComment(i);
-    }
-    
+        article.appendChild(div);  
+    } 
+
 }
 
-function renderSunGrade(i) {
-    let SunnydaysArray = [];
-    for (let city of DB.CITIES) {
-        if (i == city.id) {
-            SunnydaysArray.push(city.sun);
-        }
-    }
-    return SunnydaysArray
-}
+
+
 
 
 function renderFoodGrade(i) {
@@ -194,6 +181,7 @@ function renderHousingGrade(i) {
 }
 
 
+
 function renderFunGrade(i) {
     let funGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -213,57 +201,45 @@ function gradeAvg(a) {
     return roundString(sum / arrayLength, 0);
 }
 
+function renderCommentCity(i){
+    let cityComment = [];
+    for (let comment of DB.COMMENTS_CITY) {
+        if (i == comment.cityID) {
+            cityComment.push(comment.text);
+            
+        }
+    }
+    return cityComment;
+}
+
+//commentarer för landet 
+function renderCommentCityName(i){
+    let cityCommentName = [];
+    for (let name of DB.COMMENTS_CITY) {
+        if (i == name.cityID) {
+            cityCommentName.push(name.alias);
+        
+        }
+    }
+    return cityCommentName;
+}
+
+function renderCommentCityYear(i){
+    let cityCommentYear = [];
+    for (let year of DB.COMMENTS_CITY) {
+        if (i == year.cityID) {
+            cityCommentYear.push(year.date.year);
+        }
+    }
+    return cityCommentYear;
+}
+
+
 function roundString(numberWithManyDecimals, decimals){
     var rounded = Math.pow(10, decimals);
     return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
-  }
-
-
-
-
-//function random comment city
-//Det behövs egentligrn inte, men jag tycker det har vait enklare 
-function getAllComments() {
-    const allComments = [];
-
-    for (let i = 0; i < COMMENTS_CITY.length; i++) {
-        allComments.push(COMMENTS_CITY[i])
-    }
-    return allComments; 
 }
 
-
-function cityComment(i){
-    let studentsComment = document.querySelector(`.commentBox${i}`);
-    console.log(studentsComment)
-    studentsComment.innerHTML = "";
-    let comments = getAllComments();
-  
-    let number = randomCommentCity(comments)
-
-        let alias = comments[number].alias;
-        let text = comments[number].text;
-        let date = comments[number].date;
-        let div = document.createElement("div");
-        div.classList.add("commentCity");
-
-        div.innerHTML = `
-        <h4 class="name">${alias}, ${date.year}-${date.month}-${date.day}</h4>
-        <p>"${text}"</p>
-
-        `;
-
-        studentsComment.appendChild(div);
-        document.querySelector(".newComment").addEventListener("click", cityComment);
-       console.log(studentsComment); 
-}
-
-function randomCommentCity(comments){
-    let nr = Math.floor(Math.random() * comments.length) + 1;
-    console.log(nr);
-    return nr
-
-}
 
 
 //Direktkods
@@ -272,6 +248,9 @@ renderCity();
 renderCountry();
 renderCountryInfo();
 renderCountryImage();
+
+
+
 
 
 
