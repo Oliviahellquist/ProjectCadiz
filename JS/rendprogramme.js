@@ -197,3 +197,16 @@ function levelName(){
  let btnClear = document.querySelector(".btnClear")
  let result = document.getElementById("utbBoxContainer")
  btnClear.addEventListener("click", function(){result.innerHTML=""; programmeName()});
+=======
+/*
+
+//a function that restores the website to its original
+function rensaClick() {
+    document.getElementById("filterSectionName").value = "";
+    document.getElementById("filterSectionField").value = "";
+    document.getElementById("filterSectionLevel").value = "";
+    programmeName();
+}*/ 
+
+
+

@@ -1,5 +1,6 @@
 body{
     background-color: var(--backgroundColor);
+    margin: 0px;
 }
 
 #header{
@@ -25,9 +26,12 @@ body{
     justify-content: center; 
 }
 
+
+
+
+
 h1{
     font-family: var(--titleFont);
-    margin: 0px;
 }
 
 #grid{
@@ -45,61 +49,36 @@ h1{
 .blueBox{
     font-family: var(--titleFont);
     color: white;
-    font-size: 26px;
-    font-weight: bold;
     text-align: center;
-    height: 240px;
-    width: 280px;
     background-color: var(--colorBlue);
-    
+    height: 200px;
+    width: 300px;
 }
 
-p{
+
+h6{
     margin-top: 10px;
     font-size: 14px;
     font-weight:lighter;
     font-family: var(--mainFont);
 }
 
-#grid :nth-child(2){
-    background-image: url("../Images/australia_big_1.jpg");
+#images{
+    height: 270px;
+    width: 370px;
     background-size: cover;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
-#grid :nth-child(3){
-    background-image: url("../Images/chile_normal_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(4){
-    background-image: url("../Images/france_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(5){
-    background-image: url("../Images/mexico city_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(6){
-    background-image: url("../Images/spain_big_3.jpg");
-    background-size: cover;
-}
-#grid :nth-child(7){
-    background-image: url("../Images/sweden_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(8){
-    background-image: url("../Images/united kingdom_big_1.jpg");
-    background-size: cover;
-}
-#grid :nth-child(9){
-    background-image: url("../Images/usa_big_1.jpg");
-    background-size: cover;
-}
+
 
 .land{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("../Images/argentina_big_1.jpg");
-    background-size: cover;
+    
 }
 
 .navbar{
@@ -120,6 +99,26 @@ p{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+
+#annons{
+    margin-left: 10px;
+    color:rgb(163, 160, 160);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 8px;
+}
+  
+#advertising2{
+    height: 150px;
+    width: 100vw;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url(../advertising/reklan2.png);
+}
+  
+#wrapper{
+    margin-top: 30px;
 }
 
 
