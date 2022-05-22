@@ -109,6 +109,8 @@ function getAllCountries() {
 function countryName(){
     let countryGrid = document.getElementById("wrapper1");
     let countries = getAllCountries();
+    countryGrid.innerHTML = ""
+
   
     for (let i = 0; i < countries.length; i++) {
         let name = countries[i].name;
@@ -128,14 +130,70 @@ function countryName(){
         var element = document.querySelectorAll(".utbBox")
         for (let i = 0; i < element.length; i++) { 
             console.log(element[i].country)
-            // gemnför dataset country, med country id i knappen, sedan tar bort elementet  
+            // gemnfrö dataset country, med country id i knappen, sedan tar bort elementet  
             if (!element[i].classList.contains(`c-${id}`)){
         
                 element[i].remove()
             }
+
         }
 
         });
     }
+
+    
+    
 }
  countryName();
+
+ function getAllFields() {
+    const allFields = [];
+
+    for (let i = 0; i < FIELDS.length; i++) {
+        allFields.push(FIELDS[i])
+    }
+    return allFields; 
+}
+
+function fieldName(){
+    let fieldGrid = document.getElementById("wrapper2");
+    let fields = getAllFields();
+  
+    for (let i = 0; i < FIELDS.length; i++) {
+        let name = fields[i].name;
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection2");
+        div.innerHTML = `
+        <button class="btn">${name} </button>
+         `;
+     
+        fieldGrid.appendChild(div);
+       
+    }
+}
+ fieldName();
+
+
+function levelName(){
+    let levelGrid = document.getElementById("wrapper3");
+  
+    for (let i = 0; i < LEVELS.length; i++) {
+        
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection3");
+        div.innerHTML = `
+        <button class="btn">${LEVELS[i]} </button>
+         `;
+     
+        levelGrid.appendChild(div);
+       
+    }
+}
+ levelName();
+
+
+ let btnClear = document.querySelector(".btnClear")
+ let result = document.getElementById("utbBoxContainer")
+ btnClear.addEventListener("click", function(){result.innerHTML=""; programmeName()});
