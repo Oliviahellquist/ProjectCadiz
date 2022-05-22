@@ -65,6 +65,7 @@ h1{
 }
 
 .btnClear {
+  padding: 16px 10px;
   text-align: right;
   font-size: 25px;
   color: var(--colorRed);
@@ -98,25 +99,29 @@ h4{
 #filterContainer{
   border: 6px var(--colorRed) solid;
   width: 300px;
-  height: 600px;
+  height: 500px;
   margin-top: 30px;
   margin-left: 30px;
   background-color: #DEDEDE;
 }
 
-.filterSection{
-  margin: 5px ;
+.filterSection, .filterSection2, .filterSection3{
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr; 
+
   
 }
 
-.filterSectionName{
+#filterSectionName, #filterSectionField, #filterSectionLevel{
   padding-left: 14px;
+  padding-right: 14px;
   padding-top: 10px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#wrapper1, #wrapper2, #wrapper3{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+}
 
 .navbar{
   display: grid;
@@ -173,8 +178,7 @@ h4{
 .UtbBox>p {
   color: black;
   margin: 5px 0px 25px 25px;
-  font-family: var(--titleFont);
-  
+  font-family: var(--titleFont); 
 }
 
 .showMoreBtn {
@@ -201,6 +205,10 @@ main {
   color: black;
 }
 
+
+
+
+=======
 #annons{
   color:rgb(163, 160, 160);
   font-family: Arial, Helvetica, sans-serif;
@@ -246,8 +254,6 @@ main {
 }
 
 
-
-
 .commentStudent{
   display: flex;
   justify-content: center;
@@ -278,5 +284,8 @@ main {
   text-align: center;
   display: grid;
   grid-template-rows: 1fr 1fr 1fr;
+
+  
 }
+
 
