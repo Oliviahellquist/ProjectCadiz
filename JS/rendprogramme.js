@@ -30,6 +30,7 @@ function programmeName(){
         let level = getLevel(programmes[i].level);
 
         let countryInfo;
+        let programCountry;
 //Country name
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
@@ -38,6 +39,7 @@ function programmeName(){
                         for ( let country of COUNTRIES){
                             if ( city.countryID == country.id){
                                 countryInfo = country.name
+                                programCountry = country.id
                             }
                         }
                     }
@@ -61,7 +63,11 @@ function programmeName(){
 
         
         let div = document.createElement("div");
-        div.classList.add("utbBox");
+        div.className = `utbBox c-${programCountry}`;
+        //div.dataset.country = programmes[i].countryID
+        //div.setAttribute("country", programCountry)
+        //console.log(programCountry)
+        // dataset ger egna attrebut 
         div.innerHTML = `
         <h1 class="title">${name}</h1>
         <h4>${level}</h4>
@@ -91,11 +97,59 @@ function getLevel(resultat){
 
 programmeName();
 
+function getAllCountries() {
+    const allCountries = [];
+
+    for (let i = 0; i < COUNTRIES.length; i++) {
+        allCountries.push(COUNTRIES[i])
+    }
+    return allCountries; 
+}
+
+function countryName(){
+    let countryGrid = document.getElementById("wrapper1");
+    let countries = getAllCountries();
+    countryGrid.innerHTML = ""
+
+  
+    for (let i = 0; i < countries.length; i++) {
+        let name = countries[i].name;
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection");
+        div.innerHTML = `
+        <button id="${countries[i].id}" class="btn">${name} </button>
+         `;
+    
+        countryGrid.appendChild(div);
+        document.getElementById(countries[i].id).addEventListener("click",function(event){
+        let id = event.target.id 
+        let programmeGrid = document.getElementById("utbBoxContainer");
+        programmeGrid.innerHTML = "";
+        programmeName()
+        var element = document.querySelectorAll(".utbBox")
+        for (let i = 0; i < element.length; i++) { 
+            console.log(element[i].country)
+            // gemnfrö dataset country, med country id i knappen, sedan tar bort elementet  
+            if (!element[i].classList.contains(`c-${id}`)){
+        
+                element[i].remove()
+            }
+
+        }
+
+        });
+    }
+
+    
+    
+}
+ countryName();
+
+ function getAllFields() {
+    const allFields = [];
 
 
-
-<<<<<<< Updated upstream
-=======
     for (let i = 0; i < FIELDS.length; i++) {
         allFields.push(FIELDS[i])
     }
@@ -145,7 +199,6 @@ function levelName(){
  let result = document.getElementById("utbBoxContainer")
  btnClear.addEventListener("click", function(){result.innerHTML=""; programmeName()});
 
->>>>>>> Stashed changes
 /*
 
 //a function that restores the website to its original
@@ -155,5 +208,6 @@ function rensaClick() {
     document.getElementById("filterSectionLevel").value = "";
     programmeName();
 }*/ 
+
 
 
