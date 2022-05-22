@@ -80,7 +80,7 @@ function renderCountryImage(){
     countryImage.appendChild(div);
 }
 
-
+//En array över alla städer
 
 function getAllCities() {
     const allCities = [];
@@ -200,18 +200,7 @@ function gradeAvg(a) {
 }
     return roundString(sum / arrayLength, 0);
 }
-/*
-function renderCommentCityName(i){
-    let cityCommentName = [];
-    for (let comment of DB.COMMENTS_CITY) {
-        if (i == comment.cityID) {
-            cityComment.push(comment.alias);
-        }
-        
-    }
-    return cityCommentName
-}
-*/
+
 function renderCommentCity(i){
     let cityComment = [];
     for (let comment of DB.COMMENTS_CITY) {
@@ -223,7 +212,7 @@ function renderCommentCity(i){
     return cityComment;
 }
 
-
+//commentarer för landet 
 function renderCommentCityName(i){
     let cityCommentName = [];
     for (let name of DB.COMMENTS_CITY) {
@@ -246,69 +235,12 @@ function renderCommentCityYear(i){
 }
 
 
-/*
-function randomCommentCity(comments){
-    let nr = Math.floor(Math.random() * comments.length) + 1;
-    return nr
-}
-*/
-
-
 function roundString(numberWithManyDecimals, decimals){
     var rounded = Math.pow(10, decimals);
     return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
 }
 
 
-
-//function random comment city
-//Det behövs egentligrn inte, men jag tycker det har vait enklare 
-
-
-/*
-function getAllComments() {
-    const allComments = [];
-
-    for (let i = 0; i < COMMENTS_CITY.length; i++) {
-        allComments.push(COMMENTS_CITY[i])
-    }
-    return allComments; 
-}
-
-
-function cityComment(i){
-    let studentsComment = document.querySelector(`.commentBox${i}`);
-    console.log(studentsComment)
-    studentsComment.innerHTML = "";
-    let comments = getAllComments();
-
-    let number = randomCommentCity(comments)
-    
-
-        let alias = comments[number].alias;
-        let text = comments[number].text;
-        let date = comments[number].date;
-        let div = document.createElement("div");
-        div.classList.add("commentCity");
-
-        div.innerHTML = `
-        <h4 class="name">${alias}, ${date.year}-${date.month}-${date.day}</h4>
-        <p>"${text}"</p>
-
-        `;
-
-        studentsComment.appendChild(div);
-        document.querySelector(`.newComment${i}`).addEventListener("click", cityComment);
-   
-}
-
-function randomCommentCity(comments){
-    let nr = Math.floor(Math.random() * comments.length) + 1;
-
-    return nr
-
-}
-*/
 
 //Direktkods
 
