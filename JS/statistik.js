@@ -126,7 +126,7 @@ function randomCommentProgramme(comments){
 
 
 /*</div>
-    <div id="commentAboutProgramme">
+    <div id="commentAboutProgramm">
         <div class="commentStudent">Kommentar från studenter om programmet</div>
         <div id ="commentBox1"></div>
         <div id="newComment1">Nästa Kommentar</div>
