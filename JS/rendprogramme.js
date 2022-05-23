@@ -40,6 +40,7 @@ function programmeName(){
 
         let countryInfo;
         let programCountry;
+        let programField;
 //Country name
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
@@ -49,6 +50,7 @@ function programmeName(){
                             if ( city.countryID == country.id){
                                 countryInfo = country.name
                                 programCountry = country.id
+                                programField = field.id
                             }
                         }
                     }
@@ -62,17 +64,20 @@ function programmeName(){
             if ( programmes[i].universityID == university.id){
                 for( let city of CITIES){
                     if( university.cityID == city.id){
-                    
                         cityInfo = city.name
-    
+                        programField = field.id
                     }
                 }
             }
         }
 
-        
+//Field name
+    
+
+       
         let div = document.createElement("div");
-        div.className = `utbBox c-${programCountry}`;
+        div.className = `utbBox c-${programCountry} utbBox f-${programField} ` ;
+       
         //div.dataset.country = programmes[i].countryID
         //div.setAttribute("country", programCountry)
         //console.log(programCountry)
@@ -91,6 +96,7 @@ function programmeName(){
 
 }
 
+
 //Egentligen kan man göra en loop med det var bara tre objekt... 
 function getLevel(resultat){
     if (resultat == 0){
@@ -104,7 +110,7 @@ function getLevel(resultat){
     }
 }
 
-programmeName();
+
 
 function getAllCountries() {
     const allCountries = [];
@@ -148,14 +154,12 @@ function countryName(){
         }
 
         });
-    }
-
-    
-    
+    } 
 }
- countryName();
 
- function getAllFields() {
+
+/*
+function getAllFields() {
     const allFields = [];
 
     for (let i = 0; i < FIELDS.length; i++) {
@@ -182,6 +186,66 @@ function fieldName(){
     }
 }
  fieldName();
+*/
+
+function getAllFields() {
+    const allFields = [];
+
+    for (let i = 0; i < FIELDS.length; i++) {
+        allFields.push(FIELDS[i])
+    }
+    return allFields; 
+}
+
+function fieldsName(){
+    let countryGrid = document.getElementById("wrapper2");
+    let fields = getAllFields();
+    countryGrid.innerHTML = ""
+
+  
+    for (let i = 0; i < fields.length; i++) {
+        let name = fields[i].name;
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection");
+        div.innerHTML = `
+        <button id="${fields[i].id}" class="btn">${name}</button>
+        `;
+    
+        countryGrid.appendChild(div);
+        document.getElementById(fields[i].id).addEventListener("click",function(event){
+        let id = event.target.id 
+        let programmeGrid = document.getElementById("utbBoxContainer");
+        programmeGrid.innerHTML = "";
+        programmeName()
+        var element = document.querySelectorAll(".utbBox")
+        for (let i = 0; i < element.length; i++) { 
+           
+            // gemnfrö dataset country, med field id i knappen, sedan tar bort elementet  
+            if (!element[i].classList.contains(`f-${id}`)){
+        
+                element[i].remove()
+            }
+
+        }
+
+        });
+    } 
+}
+fieldsName();
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function levelName(){
@@ -200,11 +264,14 @@ function levelName(){
        
     }
 }
- levelName();
 
+//dirketkod
+levelName();
+countryName();
+programmeName();
 
- let btnClear = document.querySelector(".btnClear")
- let result = document.getElementById("utbBoxContainer")
+let btnClear = document.querySelector(".btnClear")
+let result = document.getElementById("utbBoxContainer")
  btnClear.addEventListener("click", function(){result.innerHTML=""; programmeName()});
 
 

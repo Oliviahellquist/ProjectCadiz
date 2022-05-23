@@ -59,7 +59,6 @@ function showMore (event ) {
 
     
     `;
-    
 
     if (event.target.innerHTML == "Visa Mer") {
        
