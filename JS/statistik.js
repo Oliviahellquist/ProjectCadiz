@@ -70,19 +70,14 @@ function showMore (event ) {
         event.target.style.padding = "12px 19px";
         box.append (div);
         programComment(event);
-        console.log(event)
         statisticsTable (box);
         
     }
     else 
     {
-        //event.target.style.position = null;
-        //div.remove();
-      
-        //event.target.style.margin = "0 0 0 0";
+       
         event.target.nextElementSibling.remove();
         event.target.innerHTML = "Visa Mer";
-        //window.location.reload();
         event.target.style.padding = "12px 30px";
     }
      
@@ -175,7 +170,6 @@ function statisticsTable (element) {
     let utbBox = element.parentElement.querySelector("h1").innerHTML;
     let array = PROGRAMMES;
     let rate = document.querySelector(".Rate").children;
-    let year = document.querySelector(".Year").children;
     let grade = document.querySelector(".Grade").children;
     let boxOne = document.getElementById("box-1").children;
     for (let i = 0; i < array.length; i++) {
