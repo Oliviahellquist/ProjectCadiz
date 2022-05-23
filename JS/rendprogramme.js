@@ -16,6 +16,13 @@ function getUniversitiById(Id){
     return uni;
 }
 
+function getFieldById(Id){
+    let field = FIELDS.find(fields => {
+        return fields.id == Id
+    });
+    return field;
+}
+
 
 function programmeName(){
     let programmeGrid = document.getElementById("utbBoxContainer");
@@ -28,6 +35,8 @@ function programmeName(){
         let universityID = programmes[i].universityID;
         let uni = getUniversitiById(universityID);
         let level = getLevel(programmes[i].level);
+        let subjectID = programmes[i].subjectID;
+        let field = getFieldById(subjectID);
 
         let countryInfo;
         let programCountry;
@@ -70,7 +79,7 @@ function programmeName(){
         // dataset ger egna attrebut 
         div.innerHTML = `
         <h1 class="title">${name}</h1>
-        <h4>${level}</h4>
+        <h4>${level} (${field.name})</h4>
         <div id="infoText">${uni.name}, ${cityInfo}, ${countryInfo}
         <button class="showMoreBtn">Visa Mer</button>
        

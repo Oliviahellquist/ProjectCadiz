@@ -156,9 +156,7 @@ function renderCity(){
 }
 
 
-
-
-
+//food grade
 function renderFoodGrade(i) {
     let foodGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -166,10 +164,14 @@ function renderFoodGrade(i) {
             foodGradeArray.push(grade.stars.food);
         }
     }
+    let foodGrade = foodGradeArray.reduce((a, b) => a + b, 0) / foodGradeArray.length;
+    if (isNaN(foodGrade) == true){
+        return "Inget omdöme"
+    }
     return gradeAvg(foodGradeArray)
 }
 
-
+//house grade
 function renderHousingGrade(i) {
     let houseGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -177,11 +179,15 @@ function renderHousingGrade(i) {
             houseGradeArray.push(grade.stars.accomodation);
         }
     }
+    let housingGrade = houseGradeArray.reduce((a, b) => a + b, 0) / houseGradeArray.length;
+    if (isNaN(housingGrade) == true){
+        return "Inget omdöme"
+    }
+    
     return gradeAvg(houseGradeArray)
 }
 
-
-
+//out grade
 function renderFunGrade(i) {
     let funGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -189,6 +195,11 @@ function renderFunGrade(i) {
             funGradeArray.push(grade.stars.out);
         }
     }
+    let funGrade = funGradeArray.reduce((a, b) => a + b, 0) / funGradeArray.length;
+    if (isNaN(funGrade) == true){
+        return "Inget omdöme"
+    }
+
     return gradeAvg(funGradeArray)
 }
 
@@ -201,16 +212,28 @@ function gradeAvg(a) {
     return roundString(sum / arrayLength, 0);
 }
 
+function roundString(numberWithManyDecimals, decimals){
+    var rounded = Math.pow(10, decimals);
+    return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
+}
+
+
+
+
+
+
 function renderCommentCity(i){
     let cityComment = [];
     for (let comment of DB.COMMENTS_CITY) {
         if (i == comment.cityID) {
-            cityComment.push(comment.text);
-            
+            cityComment.push(comment.text);  
         }
     }
     return cityComment;
 }
+
+
+
 
 //commentarer för landet 
 function renderCommentCityName(i){
@@ -218,7 +241,6 @@ function renderCommentCityName(i){
     for (let name of DB.COMMENTS_CITY) {
         if (i == name.cityID) {
             cityCommentName.push(name.alias);
-        
         }
     }
     return cityCommentName;
@@ -235,11 +257,23 @@ function renderCommentCityYear(i){
 }
 
 
-function roundString(numberWithManyDecimals, decimals){
-    var rounded = Math.pow(10, decimals);
-    return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
+function noValue(value){
+    if (isNaN(value) == false){
+        return " "
+    } else{
+        return " "
+    }
 }
 
+
+function noComment(t) {
+    if (t === undefined) {
+      return "hej";
+    }
+    return t;
+}
+let x;
+console.log(noComment(x))
 
 
 //Direktkods
@@ -250,7 +284,9 @@ renderCountryInfo();
 renderCountryImage();
 
 
-
+//sunnydays
+//Tar emot city id som en parameter och sedan tar sun dagar 
+//från staden med samma paramternsvärde som id och returnerar en array antal soldagar
 
 
 
