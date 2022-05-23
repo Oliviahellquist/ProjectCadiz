@@ -41,6 +41,7 @@ function programmeName(){
         let countryInfo;
         let programCountry;
         let programField;
+        let programLevel;
 //Country name
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
@@ -51,6 +52,7 @@ function programmeName(){
                                 countryInfo = country.name
                                 programCountry = country.id
                                 programField = field.id
+                                programLevel = level.id
                             }
                         }
                     }
@@ -76,7 +78,7 @@ function programmeName(){
 
        
         let div = document.createElement("div");
-        div.className = `utbBox c-${programCountry} utbBox f-${programField} ` ;
+        div.className = `utbBox c-${programCountry} utbBox f-${programField} utbBox l-${programLevel}` ;
        
         //div.dataset.country = programmes[i].countryID
         //div.setAttribute("country", programCountry)
@@ -158,35 +160,6 @@ function countryName(){
 }
 
 
-/*
-function getAllFields() {
-    const allFields = [];
-
-    for (let i = 0; i < FIELDS.length; i++) {
-        allFields.push(FIELDS[i])
-    }
-    return allFields; 
-}
-
-function fieldName(){
-    let fieldGrid = document.getElementById("wrapper2");
-    let fields = getAllFields();
-  
-    for (let i = 0; i < FIELDS.length; i++) {
-        let name = fields[i].name;
-       
-        let div = document.createElement("div");
-        div.classList.add("filterSection2");
-        div.innerHTML = `
-        <button class="btn">${name} </button>
-         `;
-     
-        fieldGrid.appendChild(div);
-       
-    }
-}
- fieldName();
-*/
 
 function getAllFields() {
     const allFields = [];
@@ -236,18 +209,7 @@ fieldsName();
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*
 function levelName(){
     let levelGrid = document.getElementById("wrapper3");
   
@@ -264,9 +226,59 @@ function levelName(){
        
     }
 }
+*/
+function getAllLevels() {
+    const allLevels = [];
+
+    for (let i = 0; i < LEVELS.length; i++) {
+        allLevels.push(LEVELS[i])
+    }
+    return allLevels; 
+}
+
+function levelName(){
+    let countryGrid = document.getElementById("wrapper3");
+    let levels = getAllLevels();
+    countryGrid.innerHTML = ""
+
+    
+    for (let i = 0; i < levels.length; i++) {
+        let name = levels[i].name;
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection");
+        div.innerHTML = `
+        <button id="${levels[i].id}" class="btn">${LEVELS[i]}</button>
+        `;
+    
+        countryGrid.appendChild(div);
+        document.getElementById(levels[i].id).addEventListener("click",function(event){
+        let id = event.target.id 
+        let programmeGrid = document.getElementById("utbBoxContainer");
+        programmeGrid.innerHTML = "";
+        programmeName()
+        var element = document.querySelectorAll(".utbBox")
+        for (let i = 0; i < element.length; i++) { 
+           
+            // gemnfrö dataset country, med field id i knappen, sedan tar bort elementet  
+            if (!element[i].classList.contains(`l-${id}`)){
+        
+                element[i].remove()
+            }
+
+        }
+
+        });
+    } 
+}
+levelName();
+
+
+
 
 //dirketkod
-levelName();
+
+//levelName();
 countryName();
 programmeName();
 
