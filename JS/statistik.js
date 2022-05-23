@@ -1,10 +1,9 @@
 let showMoreBtn = document.querySelectorAll(".showMoreBtn");
-//let box = document.querySelectorAll(".UtbBox");
-//showMoreBtn.addEventListener("click", showMore);
+
 showMoreBtn.forEach(Btn => Btn.addEventListener("click", showMore));
 
 function showMore (event ) {
-    //let knappen = document.querySelector(".containerKnappen");
+    console.log ("Hello");
     let box = event.target.parentElement;
     let div = document.createElement("div");
     div.classList.add("newBox");
@@ -68,16 +67,12 @@ function showMore (event ) {
         div.style.position = "relative";
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
-        //event.target.style.margin = "0 0 0 0";
         event.target.style.padding = "12px 19px";
         box.append (div);
         programComment(event);
         console.log(event)
-        //knappen.style.height ("1000px")
-        let ch = box.querySelector(".Year").children;
-        console.log (box);
         statisticsTable (box);
-        console.log (ch);
+        
     }
     else 
     {
@@ -210,8 +205,6 @@ function statisticsTable (element) {
             
             
 
-        }     else {
-                    console.log ("banan");
-                }
+        }     
     }
     }
