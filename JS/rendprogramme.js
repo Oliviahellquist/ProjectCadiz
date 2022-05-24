@@ -16,6 +16,13 @@ function getUniversitiById(Id){
     return uni;
 }
 
+function getFieldById(Id){
+    let field = FIELDS.find(fields => {
+        return fields.id == Id
+    });
+    return field;
+}
+
 
 function programmeName(){
     let programmeGrid = document.getElementById("utbBoxContainer");
@@ -28,9 +35,13 @@ function programmeName(){
         let universityID = programmes[i].universityID;
         let uni = getUniversitiById(universityID);
         let level = getLevel(programmes[i].level);
+        let subjectID = programmes[i].subjectID;
+        let field = getFieldById(subjectID);
 
         let countryInfo;
         let programCountry;
+        let programField;
+        let programLevel;
 //Country name
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
@@ -40,6 +51,8 @@ function programmeName(){
                             if ( city.countryID == country.id){
                                 countryInfo = country.name
                                 programCountry = country.id
+                                programField = field.id
+                                programLevel = level.id
                             }
                         }
                     }
@@ -53,24 +66,27 @@ function programmeName(){
             if ( programmes[i].universityID == university.id){
                 for( let city of CITIES){
                     if( university.cityID == city.id){
-                    
                         cityInfo = city.name
-    
+                        
                     }
                 }
             }
         }
 
-        
+//Field name
+    
+
+       
         let div = document.createElement("div");
-        div.className = `utbBox c-${programCountry}`;
+        div.className = `utbBox c-${programCountry} utbBox f-${programField} utbBox l-${programLevel}` ;
+       
         //div.dataset.country = programmes[i].countryID
         //div.setAttribute("country", programCountry)
         //console.log(programCountry)
         // dataset ger egna attrebut 
         div.innerHTML = `
         <h1 class="title">${name}</h1>
-        <h4>${level}</h4>
+        <h4>${level} (${field.name})</h4>
         <div id="infoText">${uni.name}, ${cityInfo}, ${countryInfo}
         <button class="showMoreBtn">Visa Mer</button>
        
@@ -81,6 +97,7 @@ function programmeName(){
     }
 
 }
+
 
 //Egentligen kan man göra en loop med det var bara tre objekt... 
 function getLevel(resultat){
@@ -95,7 +112,7 @@ function getLevel(resultat){
     }
 }
 
-programmeName();
+
 
 function getAllCountries() {
     const allCountries = [];
@@ -139,14 +156,12 @@ function countryName(){
         }
 
         });
-    }
-
-    
-    
+    } 
 }
- countryName();
 
- function getAllFields() {
+
+
+function getAllFields() {
     const allFields = [];
 
     for (let i = 0; i < FIELDS.length; i++) {
@@ -155,26 +170,46 @@ function countryName(){
     return allFields; 
 }
 
-function fieldName(){
-    let fieldGrid = document.getElementById("wrapper2");
+function fieldsName(){
+    let countryGrid = document.getElementById("wrapper2");
     let fields = getAllFields();
+    countryGrid.innerHTML = ""
+
   
-    for (let i = 0; i < FIELDS.length; i++) {
+    for (let i = 0; i < fields.length; i++) {
         let name = fields[i].name;
        
         let div = document.createElement("div");
-        div.classList.add("filterSection2");
+        div.classList.add("filterSection");
         div.innerHTML = `
-        <button class="btn">${name} </button>
-         `;
-     
-        fieldGrid.appendChild(div);
-       
-    }
+        <button id="${fields[i].id}" class="btn">${name}</button>
+        `;
+    
+        countryGrid.appendChild(div);
+        document.getElementById(fields[i].id).addEventListener("click",function(event){
+        let id = event.target.id 
+        let programmeGrid = document.getElementById("utbBoxContainer");
+        programmeGrid.innerHTML = "";
+        programmeName()
+        var element = document.querySelectorAll(".utbBox")
+        for (let i = 0; i < element.length; i++) { 
+           
+            // gemnfrö dataset country, med field id i knappen, sedan tar bort elementet  
+            if (!element[i].classList.contains(`f-${id}`)){
+        
+                element[i].remove()
+            }
+
+        }
+
+        });
+    } 
 }
- fieldName();
+fieldsName();
 
 
+
+/*
 function levelName(){
     let levelGrid = document.getElementById("wrapper3");
   
@@ -191,11 +226,64 @@ function levelName(){
        
     }
 }
- levelName();
+*/
+function getAllLevels() {
+    const allLevels = [];
+
+    for (let i = 0; i < LEVELS.length; i++) {
+        allLevels.push(LEVELS[i])
+    }
+    return allLevels; 
+}
+
+function levelName(){
+    let countryGrid = document.getElementById("wrapper3");
+    let levels = getAllLevels();
+    countryGrid.innerHTML = ""
+
+    
+    for (let i = 0; i < levels.length; i++) {
+        let name = LEVELS[i];
+       
+        let div = document.createElement("div");
+        div.classList.add("filterSection");
+        div.innerHTML = `
+        <button id="${levels[i].id}" class="btn">${name}</button>
+        `;
+    
+        countryGrid.appendChild(div);
+        document.getElementById(levels[i].id).addEventListener("click",function(event){
+        let id = event.target.id 
+        let programmeGrid = document.getElementById("utbBoxContainer");
+        programmeGrid.innerHTML = "";
+        programmeName()
+        var element = document.querySelectorAll(".utbBox")
+        for (let i = 0; i < element.length; i++) { 
+           
+            // gemnfrö dataset country, med field id i knappen, sedan tar bort elementet  
+            if (!element[i].classList.contains(`l-${id}`)){
+        
+                element[i].remove()
+            }
+
+        }
+
+        });
+    } 
+}
+levelName();
 
 
- let btnClear = document.querySelector(".btnClear")
- let result = document.getElementById("utbBoxContainer")
+
+
+//dirketkod
+
+//levelName();
+countryName();
+programmeName();
+
+let btnClear = document.querySelector(".btnClear")
+let result = document.getElementById("utbBoxContainer")
  btnClear.addEventListener("click", function(){result.innerHTML=""; programmeName()});
 
 
