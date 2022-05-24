@@ -67,7 +67,7 @@ function programmeName(){
                 for( let city of CITIES){
                     if( university.cityID == city.id){
                         cityInfo = city.name
-                        programField = field.id
+                        
                     }
                 }
             }
@@ -243,12 +243,12 @@ function levelName(){
 
     
     for (let i = 0; i < levels.length; i++) {
-        let name = levels[i].name;
+        let name = LEVELS[i];
        
         let div = document.createElement("div");
         div.classList.add("filterSection");
         div.innerHTML = `
-        <button id="${levels[i].id}" class="btn">${LEVELS[i]}</button>
+        <button id="${levels[i].id}" class="btn">${name}</button>
         `;
     
         countryGrid.appendChild(div);
