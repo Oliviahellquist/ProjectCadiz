@@ -39,7 +39,6 @@ body {
     justify-content: space-around;
 }
 .newBox {
-
     height: 450px;
     display: flex;
     justify-content:space-evenly;
