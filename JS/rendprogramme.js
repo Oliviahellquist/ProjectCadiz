@@ -52,7 +52,7 @@ function programmeName(){
                                 countryInfo = country.name
                                 programCountry = country.id
                                 programField = field.id
-                                programLevel = level.id
+                                programLevel = level
                             }
                         }
                     }
@@ -248,11 +248,11 @@ function levelName(){
         let div = document.createElement("div");
         div.classList.add("filterSection");
         div.innerHTML = `
-        <button id="${levels[i].id}" class="btn">${name}</button>
+        <button id="${levels[i]}" class="btn">${name}</button>
         `;
     
         countryGrid.appendChild(div);
-        document.getElementById(levels[i].id).addEventListener("click",function(event){
+        document.getElementById(levels[i]).addEventListener("click",function(event){
         let id = event.target.id 
         let programmeGrid = document.getElementById("utbBoxContainer");
         programmeGrid.innerHTML = "";
