@@ -68,7 +68,7 @@ function showMore (event ) {
         div.style.position = "relative";
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
-        event.target.style.padding = "12px 19px";
+        
         box.append (div);
         programComment(event);
         statisticsTable (box);
@@ -79,7 +79,7 @@ function showMore (event ) {
        
         event.target.nextElementSibling.remove();
         event.target.innerHTML = "Visa Mer";
-        event.target.style.padding = "12px 30px";
+        
     }
      
 }

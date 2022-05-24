@@ -86,8 +86,9 @@ function programmeName(){
         // dataset ger egna attrebut 
         div.innerHTML = `
         <h1 class="title">${name}</h1>
-        <h4>${level} (${field.name})</h4>
-        <div id="infoText">${uni.name}, ${cityInfo}, ${countryInfo}
+        <h4>${level},(${field.name})</h4>
+        <h4>${uni.name}, ${cityInfo}, ${countryInfo}</h4>
+        <div id="infoText">${""} 
         <button class="showMoreBtn">Visa Mer</button>
        
         </div>
