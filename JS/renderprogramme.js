@@ -86,7 +86,7 @@ function programmeName(){
         // dataset ger egna attrebut 
         div.innerHTML = `
         <h1 class="title">${name}</h1>
-        <h4>${level},(${field.name})</h4>
+        <h4>${level} (${field.name})</h4>
         <h4>${uni.name}, ${cityInfo}, ${countryInfo}</h4>
         <div id="infoText">${""} 
         <button class="showMoreBtn">Visa Mer</button>
@@ -210,24 +210,6 @@ fieldsName();
 
 
 
-/*
-function levelName(){
-    let levelGrid = document.getElementById("wrapper3");
-  
-    for (let i = 0; i < LEVELS.length; i++) {
-        
-       
-        let div = document.createElement("div");
-        div.classList.add("filterSection3");
-        div.innerHTML = `
-        <button class="btn">${LEVELS[i]} </button>
-         `;
-     
-        levelGrid.appendChild(div);
-       
-    }
-}
-*/
 function getAllLevels() {
     const allLevels = [];
 
