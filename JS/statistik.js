@@ -3,7 +3,6 @@ let showMoreBtn = document.querySelectorAll(".showMoreBtn");
 showMoreBtn.forEach(Btn => Btn.addEventListener("click", showMore));
 
 function showMore (event ) {
-    console.log ("Hello");
     let box = event.target.parentElement;
     let div = document.createElement("div");
     div.classList.add("newBox");
@@ -60,9 +59,12 @@ function showMore (event ) {
     `;
 
     if (event.target.innerHTML == "Visa Mer") {
-       
-        div.style.height = "400px";
+
+        div.style.backgroundColor = "#C4C4C4"
+        div.style.height = "420px";
         div.style.width = "1000px";
+        div.style.margin ="0px"
+        div.style.paddingLeft = "10px"
         div.style.position = "relative";
         event.target.innerHTML = "";
         event.target.innerHTML = "Visa Mindre";
