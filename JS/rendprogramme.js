@@ -1,4 +1,4 @@
-//Array of all programmes
+// RETURNS Array of all programmes
 function getAllProgrammes() {
     const allProgrammes = [];
 
@@ -42,11 +42,13 @@ function programmeName(){
         let programCountry;
         let programField;
         let programLevel;
-//Country name
+// första forloop får tillgång till universitetID
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
+                //Andra forloop får tillgång till stadID via universitetsID från databasen
                 for( let city of CITIES){
                     if( university.cityID == city.id){
+                        //Tredje forloop får tillgång till Land via stadID från databasen
                         for ( let country of COUNTRIES){
                             if ( city.countryID == country.id){
                                 countryInfo = country.name
@@ -61,7 +63,7 @@ function programmeName(){
         }
 
         let cityInfo;
-//City name
+//ittererar genom varje stad och universitet för att få tillgång till cityinformation (namn)
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
                 for( let city of CITIES){
@@ -86,7 +88,7 @@ function programmeName(){
         // dataset ger egna attrebut 
         div.innerHTML = `
         <h1 class="title">${name}</h1>
-        <h4>${level},(${field.name})</h4>
+        <h4>${level} (${field.name})</h4>
         <h4>${uni.name}, ${cityInfo}, ${countryInfo}</h4>
         <div id="infoText">${""} 
         <button class="showMoreBtn">Visa Mer</button>
@@ -210,24 +212,6 @@ fieldsName();
 
 
 
-/*
-function levelName(){
-    let levelGrid = document.getElementById("wrapper3");
-  
-    for (let i = 0; i < LEVELS.length; i++) {
-        
-       
-        let div = document.createElement("div");
-        div.classList.add("filterSection3");
-        div.innerHTML = `
-        <button class="btn">${LEVELS[i]} </button>
-         `;
-     
-        levelGrid.appendChild(div);
-       
-    }
-}
-*/
 function getAllLevels() {
     const allLevels = [];
 
@@ -286,5 +270,3 @@ programmeName();
 let btnClear = document.querySelector(".btnClear")
 let result = document.getElementById("utbBoxContainer")
  btnClear.addEventListener("click", function(){result.innerHTML=""; programmeName()});
-
-
