@@ -52,6 +52,10 @@ body{
     margin-top: -100px;
 }
 
+.nav-item{
+    font-family: var(--mainFont);
+}
+
 #box1 {
     margin-top: 40px;
     font-size: 20px;
@@ -61,9 +65,14 @@ body{
     align-items: center;
 }
 
-p{
-    width: 400px;
+h4{
+    font-family: var(--mainFont);
+    width: 500px;
     text-align: center;
+}
+
+p{
+    font-family: var(--mainFont);
 }
 
 #redBox{
