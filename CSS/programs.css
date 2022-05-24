@@ -212,22 +212,13 @@ main {
 }
 
 
-
-#filterContainer{
-  display: flex;
-  flex-direction: column;
-}
-
 #annons{
   color:rgb(163, 160, 160);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 8px;
 }
 #advertising1{
-
-  
-  height: 650px;
-
+  height: 600px;
   background-repeat: no-repeat;
   background-size: contain;
   background-image: url(../advertising/reklam1.png);
@@ -235,9 +226,8 @@ main {
 
 #wrapper{
   margin-top: 30px;
-
-  
-
+  height: 400px;
+  width: 300px;
 }
 
 .to-top{
