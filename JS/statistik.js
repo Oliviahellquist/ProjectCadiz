@@ -1,10 +1,9 @@
 let showMoreBtn = document.querySelectorAll(".showMoreBtn");
 
 showMoreBtn.forEach(Btn => Btn.addEventListener("click", showMore));
-//för varje knapp .btn ska man kunna klicka på visa mer
-//Det gåt dock inte vid filtrering av någon anlednig
+
+function showMore (event ) {
     let box = event.target.parentElement;
-    //Egenskapen event.target kan användas för att implementera händelse
     let div = document.createElement("div");
     div.classList.add("newBox");
     div.innerHTML =`
@@ -127,47 +126,6 @@ function randomCommentProgramme(comments){
 }
 
 
-/*</div>
-    <div id="commentAboutProgramm">
-        <div class="commentStudent">Kommentar från studenter om programmet</div>
-        <div id ="commentBox1"></div>
-        <div id="newComment1">Nästa Kommentar</div>
-    </div>
-    `;*/
-
-   /* <div id="box-2">
-    <div><h1 class="rubrik">Statistics</h1></div>
-    <div class="rows-3">
-        <div class="year"><p>Year</p></div>
-        <div class="succes"><p>Succes Rate</p></div>
-        <div class="entry"><p>Entry Grade</p></div>
-    </div>
-    <div class="siffror">
-     <div class="Year">
-        <div class="rad-1"></div>
-        <div class="rad-2"></div>
-        <div class="rad-3"></div>
-        <div class="rad-4"></div>
-        <div class="rad-5"></div>
-     </div>
-     <div class="Rate">
-        <div class="rad-1"></div>
-        <div class="rad-2"></div>
-        <div class="rad-3"></div>
-        <div class="rad-4"></div>
-        <div class="rad-5"></div>
-     </div>
-     <div class="Grade">
-        <div class="rad-1"></div>
-        <div class="rad-2"></div>
-        <div class="rad-3"></div>
-        <div class="rad-4"></div>
-        <div class="rad-5"></div>
-     </div>
-   
-    </div>
-
-</div>*/
 function statisticsTable (element) {
     let utbBox = element.parentElement.querySelector("h1").innerHTML;
     let array = PROGRAMMES;
@@ -197,10 +155,6 @@ function statisticsTable (element) {
                 grade[k].innerHTML = array[i].entryGrades[k];
 
             }
-            
-            
-            
-
         }     
     }
-    }
+}
