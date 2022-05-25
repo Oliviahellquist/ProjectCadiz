@@ -1,3 +1,15 @@
+const toTop = document.querySelector(".to-top");
+window.addEventListener("scroll", () => {
+    //en EventListener som gör att när man klickar på ikonen förs man tillbaka längst upp
+    if (window.pageYOffset > 150){
+        //vid 150 px ska ikonen poppa upp 
+         toTop.classList.add("active");
+    } else {
+        //annars syns den inte
+         toTop.classList.remove("active");
+    }
+})
+
 //Array of all programmes
 function getAllProgrammes() {
     const allProgrammes = [];
@@ -9,6 +21,7 @@ function getAllProgrammes() {
 }
 
 //Function to get university Id
+//function för att spara universitetets id i en variabel och returnerar det
 function getUniversitiById(Id){
     let uni = UNIVERSITIES.find(university => {
         return university.id == Id
@@ -16,6 +29,7 @@ function getUniversitiById(Id){
     return uni;
 }
 
+//enklare att navigera (iaf för mig)
 function getFieldById(Id){
     let field = FIELDS.find(fields => {
         return fields.id == Id
@@ -23,11 +37,11 @@ function getFieldById(Id){
     return field;
 }
 
-
+//här skapas listan med utbildningar
 function programmeName(){
     let programmeGrid = document.getElementById("utbBoxContainer");
     let programmes = getAllProgrammes();
-
+    //deklarerar programmes med funktionen över alla program
 
     for (let i = 0; i < programmes.length; i++) {
 
@@ -35,6 +49,7 @@ function programmeName(){
         let universityID = programmes[i].universityID;
         let uni = getUniversitiById(universityID);
         let level = getLevel(programmes[i].level);
+        //functionen getLevel returnerar en sträng och siffran stämmeröverrens
         let subjectID = programmes[i].subjectID;
         let field = getFieldById(subjectID);
 
@@ -45,14 +60,21 @@ function programmeName(){
 //Country name
         for ( let university of UNIVERSITIES){
             if ( programmes[i].universityID == university.id){
+                //om proggrammets universityID är densamma som university.id
                 for( let city of CITIES){
                     if( university.cityID == city.id){
+                        //om universitetets cityID är densamma som city.id
                         for ( let country of COUNTRIES){
                             if ( city.countryID == country.id){
+                               //om stadens countryID är densamma som country.id så ska följande
                                 countryInfo = country.name
+                                //landets namn
                                 programCountry = country.id
+                                //landets id
                                 programField = field.id
+                                //ämnets id
                                 programLevel = level
+                                //nivån
                             }
                         }
                     }
@@ -67,17 +89,15 @@ function programmeName(){
                 for( let city of CITIES){
                     if( university.cityID == city.id){
                         cityInfo = city.name
-                        
+                        //stadens namn
                     }
                 }
             }
         }
 
-//Field name
-    
-
        
         let div = document.createElement("div");
+        //filtreringen classnamnet ger olika namn beroende på vad som är filtrerat 
         div.className = `utbBox c-${programCountry} utbBox f-${programField} utbBox l-${programLevel}` ;
        
         //div.dataset.country = programmes[i].countryID
@@ -245,7 +265,6 @@ function levelName(){
            
             // gemnfrö dataset country, med field id i knappen, sedan tar bort elementet  
             if (!element[i].classList.contains(`l-${id}`)){
-        
                 element[i].remove()
             }
 
