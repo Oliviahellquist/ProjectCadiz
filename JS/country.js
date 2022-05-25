@@ -187,7 +187,13 @@ function renderHousingGrade(i) {
     return gradeAvg(houseGradeArray)
 }
 
+
+//function som tar emot parameter som ska motsvara cityid som returnar 
+//medelvärde av alla nöjes/fritids betyg i COMMENTS_CITY med samma cityid.
+
+
 //function som tar emot parameter som ska motsvara cityid som returnar medelvärde av alla nöjes/fritids betyg i COMMENTS_CITY med samma cityid.
+
 function renderFunGrade(i) {
     let funGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
