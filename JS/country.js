@@ -1,6 +1,4 @@
 //Array of all countries
-//Återigen har jag tyckt att det varit enklare att få åtkomst...
-//returnerar en array över alla länder
 function getAllCountries() {
     const allCountries = [];
   
@@ -14,11 +12,10 @@ function getAllCountries() {
 function renderCountry(){
     let countryTitle = document.getElementById("title");
     let countries = getAllCountries();
-    //deklarerar countries med arrayen över alla städer
+  
     let nameId = window.sessionStorage.getItem("land"); 
-    // window.sessionStorage.getItem() Get saved data from sessionStorage
+
     let country = countries.find(country => {
-    //Find hittar den FÖRSTA saken som matchar din jämförelse 
     // Om det nuvarande landet vi är på är detsamma som det undansparade
         if (country.id == nameId) {
        // ... så har vi hittat rätt!
@@ -34,11 +31,8 @@ function renderCountry(){
     `;
   
     countryTitle.appendChild(div);
-    //Här skapas titeln för det valda landet
 }
 
-
-//samma procedur som innan
 function renderCountryInfo(){
     let countryInfo = document.getElementById("article");
     let countriesInfo = getAllCountries();
@@ -61,7 +55,6 @@ function renderCountryInfo(){
    
     `;
     countryInfo.appendChild(div);
-    //här skapas infotexten
 }
 
 //går igenom alla länder och tar den första bilden eller den andra [1] bilden i imagesNormal
@@ -85,10 +78,10 @@ function renderCountryImage(){
     <div id="images" style="background-image: url(../Images/${country.imagesNormal[1]});"></div>
     `;
     countryImage.appendChild(div);
-    //här skapas bilden till de valda landet
 }
 
 //En array över alla städer
+
 function getAllCities() {
     const allCities = [];
 
@@ -99,21 +92,21 @@ function getAllCities() {
 }
 
 //functionen går igenom de städer som ingår i landet
+
+//Function to get the cities in the chosen country
 function renderCity(){
     let article = document.getElementById("articleCity");
     let cities = getAllCities();
     
     let nameId = window.sessionStorage.getItem("land"); 
     let city = cities.filter(city => {
-        //Filter hittar ALLT som matchar din jämförelse alltså istället för att ta det första som find gör tar filter allt som matchar 
         if (city.countryID == nameId) {
             return true;
         }
         return false;
     });
-    //alltså alla städer som ingår i det valda landet
 
-    //här skapas alla länder i innerHTML
+
     for (let i = 0; i < city.length; i++){
         let div = document.createElement("div");
         div.classList.add("cityInfo");
@@ -158,7 +151,6 @@ function renderCity(){
       
         `;
         article.appendChild(div);  
-        //functionerna renderFoodGrade(), renderHousingGrade(), renderFunGrade(), renderCommentCity() anropas i innerHTML
     } 
 
 }
@@ -206,7 +198,6 @@ function renderFunGrade(i) {
     let funGrade = funGradeArray.reduce((a, b) => a + b, 0) / funGradeArray.length;
     if (isNaN(funGrade) == true){
         return "Inget omdöme"
-        //om funGrade är densamma som NaN returneras "Inget omdöme"
     }
 
     return gradeAvg(funGradeArray)
@@ -223,27 +214,25 @@ function gradeAvg(a) {
 
 function roundString(numberWithManyDecimals, decimals){
     var rounded = Math.pow(10, decimals);
-    //Funktionen Math.pow() returnerar basen till exponentpotensen,
-    //Basen 10, decimals används för att höja basen
     return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
-    //.toFixed avrundas till 0 decimaler 
 }
+
+
+
 
 
 
 function renderCommentCity(i){
     let cityComment = [];
-    //deklarerar en tom array
-    //om i är densamma som cityidet 
     for (let comment of DB.COMMENTS_CITY) {
         if (i == comment.cityID) {
             cityComment.push(comment.text);  
-            //Metoden push() lägger till ett eller flera element i slutet av en array och returnerar den nya längden på arrayen.
-            //alltså comment.text är det som arrayen innehåller
         }
     }
     return cityComment;
 }
+
+
 
 
 //commentarer för landet 
@@ -268,8 +257,6 @@ function renderCommentCityYear(i){
 }
 
 
-//Funktionen isNaN() avgör om ett värde är NaN eller inte.
-//med hjälp av den kan vi returnera en text som "inget omdöme"
 function noValue(value){
     if (isNaN(value) == false){
         return " "
@@ -279,13 +266,28 @@ function noValue(value){
 }
 
 
+function noComment(t) {
+    if (t === undefined) {
+      return "hej";
+    }
+    return t;
+}
+let x;
+console.log(noComment(x))
 
-//Direktkod
+
+//Direktkods
 
 renderCity();
 renderCountry();
 renderCountryInfo();
 renderCountryImage();
+
+
+//sunnydays
+//Tar emot city id som en parameter och sedan tar sun dagar 
+//från staden med samma paramternsvärde som id och returnerar en array antal soldagar
+
 
 
 

@@ -1,11 +1,9 @@
 let showMoreBtn = document.querySelectorAll(".showMoreBtn");
 
 showMoreBtn.forEach(Btn => Btn.addEventListener("click", showMore));
-//för varje knapp .btn ska man kunna klicka på visa mer
-//Det gåt dock inte vid filtrering av någon anlednig
-function showMore (event) {
+
+function showMore (event ) {
     let box = event.target.parentElement;
-    //Egenskapen event.target kan användas för att implementera händelse
     let div = document.createElement("div");
     div.classList.add("newBox");
     div.innerHTML =`
@@ -87,7 +85,7 @@ function showMore (event) {
 }
 
 
-//En array över alla kommentarer
+//function random comment program
 function getAllCommentsProgrammes() {
     const allCommentsProgrammes = [];
 
@@ -97,28 +95,25 @@ function getAllCommentsProgrammes() {
     return allCommentsProgrammes; 
 }
 
-//fuktionen är inte kopplad till rätt ämne tyvärr
-//anropas i funktionen ovan
-//kommentarsboxen skapas i innerHTML
+
 function programComment(){
     let studentsComment = document.getElementById("commentBox1");
     studentsComment.innerHTML = "";
     let comments = getAllCommentsProgrammes();
   
     let number = randomCommentProgramme(comments)
-    //här anropas random funktionen 
 
         let alias = comments[number].alias;
         let text = comments[number].text;
         let date = comments[number].date;
         let div = document.createElement("div");
         div.classList.add("commentProgremmes");
-        //här syns det i innerHTML
+
         div.innerHTML = `
         <div class="name">${alias}, ${date.year}-${date.month}-${date.day}</div>
         <p>"${text}"</p>
         `;
-        //en EventListener på knappen nästa kommentar som slumpar en random kommentar
+
         studentsComment.appendChild(div);
         document.getElementById("newComment1").addEventListener("click", programComment);
 }
@@ -126,8 +121,6 @@ function programComment(){
 
 function randomCommentProgramme(comments){
     let nr = Math.floor(Math.random() * comments.length) + 1;
-    //random kommentar 
-    //avrundar alltid neråt
     console.log(nr);
     return nr
 }
