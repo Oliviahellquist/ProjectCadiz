@@ -195,7 +195,8 @@ function fieldsName(){
     let countryGrid = document.getElementById("wrapper2");
     let fields = getAllFields();
     countryGrid.innerHTML = ""
-
+    //tar elementet i  html 
+    //samma som country
   
     for (let i = 0; i < fields.length; i++) {
         let name = fields[i].name;
@@ -205,10 +206,12 @@ function fieldsName(){
         div.innerHTML = `
         <button id="${fields[i].id}" class="btn">${name}</button>
         `;
-    
+        //skapas knapparna med ett varsitt id beroende på vilken ordning
+        //men alla knappar har samma classnamn 
         countryGrid.appendChild(div);
         document.getElementById(fields[i].id).addEventListener("click",function(event){
         let id = event.target.id 
+        //lätter till en eventlistner på idet 
         let programmeGrid = document.getElementById("utbBoxContainer");
         programmeGrid.innerHTML = "";
         programmeName()
