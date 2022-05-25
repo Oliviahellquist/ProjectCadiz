@@ -2,11 +2,19 @@
 let showMoreBtn = document.querySelectorAll(".showMoreBtn");
 //Denna variabel setts därefter in som en forloop för varje gemensamma "knapp" och kommer utföra funktionen "showmore"
 showMoreBtn.forEach(Btn => Btn.addEventListener("click", showMore));
+
 //Den här funktionen skapar strukturen för innehållet efter att knappen ("showMoreBtn") är aktiv
 function showMore (event) {
     //får tillgång till föräldern som knappen är inuti
     let box = event.target.parentElement;
     //skapar div
+
+//för varje knapp .btn ska man kunna klicka på visa mer
+//Det gåt dock inte vid filtrering av någon anlednig
+function showMore (event) {
+    let box = event.target.parentElement;
+    //Egenskapen event.target kan användas för att implementera händelse
+
     let div = document.createElement("div");
     //skapar classnamn till nya div
     div.classList.add("newBox");

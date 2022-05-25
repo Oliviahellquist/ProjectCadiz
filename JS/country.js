@@ -164,7 +164,7 @@ function renderCity(){
 }
 
 
-//food grade
+//function som tar emot parameter som ska motsvara cityid som returnar medelvärde av alla matbetyg i COMMENTS_CITY med samma cityid.
 function renderFoodGrade(i) {
     let foodGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -179,7 +179,7 @@ function renderFoodGrade(i) {
     return gradeAvg(foodGradeArray)
 }
 
-//house grade
+//function som tar emot parameter som ska motsvara cityid som returnar medelvärde av alla husbetyg i COMMENTS_CITY med samma cityid.
 function renderHousingGrade(i) {
     let houseGradeArray = [];
     for (let grade of DB.COMMENTS_CITY) {
@@ -195,8 +195,12 @@ function renderHousingGrade(i) {
     return gradeAvg(houseGradeArray)
 }
 
+
 //function som tar emot parameter som ska motsvara cityid som returnar 
 //medelvärde av alla nöjes/fritids betyg i COMMENTS_CITY med samma cityid.
+
+
+//function som tar emot parameter som ska motsvara cityid som returnar medelvärde av alla nöjes/fritids betyg i COMMENTS_CITY med samma cityid.
 
 function renderFunGrade(i) {
     let funGradeArray = [];

@@ -1,5 +1,5 @@
 
-
+//function som tar emot parameter som ska motsvara programid som returnar medelvärde av alla Lärarebetyg i COMMENTS_PROGRAMME med samma programid.
 function renderTeacherGrade(i) {
 
     let teacherGradeArray = [];
@@ -17,7 +17,7 @@ function renderTeacherGrade(i) {
 
 }
 
-
+//function som tar emot parameter som ska motsvara programid som returnar medelvärde av alla kursbetyg i COMMENTS_PROGRAMME med samma programid.
 function renderCoursesGrade(i) {
 
     let coursesGradeArray = [];
@@ -35,7 +35,7 @@ function renderCoursesGrade(i) {
 
 }
 
-
+//Function som tar emot en array som parameter och sedan ger ut medelvärde på alla värden i arrayen.
 function gradeAvg(a) {
     var i = 0, sum = 0, arrayLength = a.length;
     while (i < arrayLength) {
@@ -43,7 +43,7 @@ function gradeAvg(a) {
 }
     return roundString(sum / arrayLength, 0);
 }
-
+//function som avrundar till närmsta heltal.
 function roundString(numberWithManyDecimals, decimals){
     var rounded = Math.pow(10, decimals);
     return (Math.round(numberWithManyDecimals * rounded) / rounded).toFixed(decimals);
