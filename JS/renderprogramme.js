@@ -210,6 +210,7 @@ function fieldsName(){
         //men alla knappar har samma classnamn 
         countryGrid.appendChild(div);
         document.getElementById(fields[i].id).addEventListener("click",function(event){
+            //function i eventlistenern
         let id = event.target.id 
         //lätter till en eventlistner på idet 
         let programmeGrid = document.getElementById("utbBoxContainer");

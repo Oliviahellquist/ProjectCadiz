@@ -74,13 +74,14 @@ function showMore (event) {
         box.append (div);
         programComment(event);
         statisticsTable (box);
+        //om man trycker på knappen kommer detta ske divven få en height och width osv
         
     }
     else 
     {
-       
         event.target.nextElementSibling.remove();
         event.target.innerHTML = "Visa Mer";
+        //annars tas rutan bort
         
     }
      
